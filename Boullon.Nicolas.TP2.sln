@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33627.172
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BibliotecaDeClases", "BibliotecaDeClases\BibliotecaDeClases.csproj", "{73D8B8DE-A54A-4AAF-9DB0-377F1BDFC71E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrmDesign", "FrmDesign\FrmDesign.csproj", "{6F705A32-EC23-408E-BECB-899D2226EF4A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73D8B8DE-A54A-4AAF-9DB0-377F1BDFC71E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73D8B8DE-A54A-4AAF-9DB0-377F1BDFC71E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73D8B8DE-A54A-4AAF-9DB0-377F1BDFC71E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73D8B8DE-A54A-4AAF-9DB0-377F1BDFC71E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6F705A32-EC23-408E-BECB-899D2226EF4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6F705A32-EC23-408E-BECB-899D2226EF4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6F705A32-EC23-408E-BECB-899D2226EF4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6F705A32-EC23-408E-BECB-899D2226EF4A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4AF68E02-E925-4479-B997-DBA0C76FBED5}
+	EndGlobalSection
+EndGlobal
