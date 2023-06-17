@@ -8,7 +8,7 @@ namespace BibliotecaDeClases
 {
     public class Tirada
     {
-        private int[] tiradaDados;
+        public int[] tiradaDados;
 
         public Tirada()
         {
@@ -24,8 +24,23 @@ namespace BibliotecaDeClases
             for (int i = 0; i < 5; i++)
             {
                 tirarDados.tiradaDados[i] = random.Next(1, 7);
+                
             }
             return tirarDados;
+        }
+
+
+        public  string MostrarTirada()
+        {
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < 4; i++)
+            {
+                sb.Append(TiradaDados[i] + "-");
+
+            }
+            sb.Append(TiradaDados[4]);
+            
+            return sb.ToString();
         }
     }
 }

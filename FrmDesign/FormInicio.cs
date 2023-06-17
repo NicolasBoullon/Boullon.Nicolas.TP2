@@ -26,5 +26,13 @@ namespace FrmDesign
         {
             tbcInferfazInicio.SelectTab(1);
         }
+
+        private void btnCrearMesa_Click(object sender, EventArgs e)
+        {
+            FormPartida frm = new FormPartida();
+           
+            frm.ShowDialog();
+            
+        }
     }
 }

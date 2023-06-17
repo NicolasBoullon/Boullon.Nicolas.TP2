@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "DbLuDBzjSDiDbAYAB1nDZNId+cVA7TW9vMmZjute2Oi53RrIRArjM5AApfRQQjidKg1Fjeh/RSfbZF8skDzEDg==",
+  "dgSpecHash": "MnBNkdIZarpMaAnIqpcQEhOA8XO4pOvtPdJ6xnIAhxQH3vyMgSUQz0i/32G2ZiLHwZOGAeNvJejdbtz14N0EFQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\nicol\\source\\repos\\2023\\Boullon.Nicolas.TP2\\FrmDesign\\FrmDesign.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\nicol\\.nuget\\packages\\fontawesome\\4.7.0\\fontawesome.4.7.0.nupkg.sha512",
     "C:\\Users\\nicol\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\nicol\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\nicol\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",

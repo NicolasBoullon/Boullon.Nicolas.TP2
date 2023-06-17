@@ -208,6 +208,7 @@
             btnAutocompletadoLogin.TabIndex = 11;
             btnAutocompletadoLogin.Text = "Autocompletar";
             btnAutocompletadoLogin.UseVisualStyleBackColor = false;
+            btnAutocompletadoLogin.Click += btnAutocompletadoLogin_Click;
             // 
             // btnIngresarLogin
             // 
@@ -230,6 +231,7 @@
             txtPassLogin.Name = "txtPassLogin";
             txtPassLogin.Size = new Size(175, 27);
             txtPassLogin.TabIndex = 9;
+            txtPassLogin.UseSystemPasswordChar = true;
             // 
             // txtUserLogin
             // 
@@ -266,17 +268,17 @@
             // 
             lblGeneralaTimba.Anchor = AnchorStyles.Left | AnchorStyles.Right;
             lblGeneralaTimba.AutoSize = true;
-            lblGeneralaTimba.Font = new Font("Segoe Print", 30.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblGeneralaTimba.Font = new Font("Gabriola", 48.75F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             lblGeneralaTimba.ForeColor = Color.Snow;
-            lblGeneralaTimba.Location = new Point(-3, 7);
+            lblGeneralaTimba.Location = new Point(-10, -9);
             lblGeneralaTimba.Name = "lblGeneralaTimba";
-            lblGeneralaTimba.Size = new Size(358, 71);
+            lblGeneralaTimba.Size = new Size(376, 119);
             lblGeneralaTimba.TabIndex = 8;
             lblGeneralaTimba.Text = "Generala Timba";
             // 
             // pnlImagenDados
             // 
-            pnlImagenDados.BackgroundImage = Properties.Resources.Daddos;
+            pnlImagenDados.BackgroundImage = Properties.Resources.asdfasdfasdfa;
             pnlImagenDados.BackgroundImageLayout = ImageLayout.Stretch;
             pnlImagenDados.Dock = DockStyle.Fill;
             pnlImagenDados.Location = new Point(0, 0);

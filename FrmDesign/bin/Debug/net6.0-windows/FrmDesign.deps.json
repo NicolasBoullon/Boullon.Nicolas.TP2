@@ -8,12 +8,14 @@
     ".NETCoreApp,Version=v6.0": {
       "FrmDesign/1.0.0": {
         "dependencies": {
-          "BibliotecaDeClases": "1.0.0"
+          "BibliotecaDeClases": "1.0.0",
+          "FontAwesome": "4.7.0"
         },
         "runtime": {
           "FrmDesign.dll": {}
         }
       },
+      "FontAwesome/4.7.0": {},
       "Microsoft.NETCore.Platforms/3.1.0": {},
       "Microsoft.Win32.Registry/4.7.0": {
         "dependencies": {
@@ -104,6 +106,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "FontAwesome/4.7.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-n4H/brfszElyoZ4kmGh8E75uqvLzLvFr3h2PFVdPH1LwUmWIpeqdaW2pcC4oZAhg7sESyObh0IZpAI8COCNeUg==",
+      "path": "fontawesome/4.7.0",
+      "hashPath": "fontawesome.4.7.0.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "type": "package",

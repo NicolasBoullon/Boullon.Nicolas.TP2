@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,14 +14,16 @@ namespace BibliotecaDeClases
         private int cantidadDeVictorias;
         private Tirada[] tiradas;
 
-        public Jugador() { }
+        public Jugador()
+        {
+            this.tiradas = new Tirada[5];
+        }
 
-        public Jugador(int id, string nombreJugador, int cantidadDeVictorias)
+        public Jugador(int id, string nombreJugador, int cantidadDeVictorias):this()
         {
             this.id = id;
             this.nombreJugador = nombreJugador;
             this.cantidadDeVictorias = cantidadDeVictorias;
-            this.tiradas = new Tirada[5];
         }
 
         public int Id { get => id; set => id = value; }
@@ -28,30 +31,13 @@ namespace BibliotecaDeClases
         public int CantidadDeVictorias { get => cantidadDeVictorias; set => cantidadDeVictorias = value; }
         public Tirada[] Tiradas { get => tiradas; set => tiradas = value; }
 
-        public void TirarDados()
+        public void HacerTirada()
         {
-            for (int i = 0; i < tiradas.Length; i++)
+            for (int i = 0; i < 5; i++)
             {
-                this.tiradas[i] = Tirada.TirarDados();
+                Tiradas[i] = Tirada.TirarDados();
             }
         }
-
-        //public string MostrarTirada()
-        //{
-        //    StringBuilder sb = new StringBuilder();
-        //    for (int i = 0; i < dados.Length; i++)
-        //    {
-        //        if (dados.Length - 1 == i)
-        //        {
-        //            sb.Append($"{dados[i]}");
-        //        }
-        //        else
-        //        {
-        //            sb.Append($"{dados[i]} - ");
-        //        }
-        //    }
-        //    return sb.ToString();
-        //}
 
         public string MostrarInformacionJugador()
         {
@@ -72,6 +58,14 @@ namespace BibliotecaDeClases
             return !(j1 == j2);
         }
 
-
+        public static string MostrarTiradas(Jugador j1)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (Tirada item in j1.tiradas)
+            {
+                sb.AppendLine(item.MostrarTirada());
+            }
+            return sb.ToString();
+        }
     }
 }

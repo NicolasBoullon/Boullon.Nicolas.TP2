@@ -28,31 +28,59 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInicio));
             pnlBotones = new Panel();
             pnlBarraBlanca = new Panel();
-            button2 = new Button();
-            button3 = new Button();
+            btnHistorialRanking = new Button();
             btnMenuPartidas = new Button();
             pnlContenedorDelTabControl = new Panel();
             tbcInferfazInicio = new TabControl();
-            tabPage1 = new TabPage();
-            tabPage2 = new TabPage();
+            tbpPartidas = new TabPage();
+            gpbCrearMesa = new GroupBox();
+            btnCrearJugador = new Button();
+            lblJugadorDos = new Label();
+            cmbJugadorDos = new ComboBox();
+            btnCrearMesa = new Button();
+            cmbJugadorUno = new ComboBox();
+            lblJugadorUno = new Label();
+            pcbMisterDados = new PictureBox();
+            tbpHistorialRanking = new TabPage();
+            lblHistorialDePartidas = new Label();
+            lblRankingDeVictorias = new Label();
+            dtgvRankingVictorias = new DataGridView();
+            IDJugador = new DataGridViewTextBoxColumn();
+            NombreCompleto = new DataGridViewTextBoxColumn();
+            CantidadDeVictorias = new DataGridViewTextBoxColumn();
+            dtgvHistorialPartidas = new DataGridView();
+            JugadorUno = new DataGridViewTextBoxColumn();
+            JugadorDos = new DataGridViewTextBoxColumn();
+            Puntos = new DataGridViewTextBoxColumn();
+            Punto = new DataGridViewTextBoxColumn();
+            JugadorGanador = new DataGridViewTextBoxColumn();
+            FechaPartida = new DataGridViewTextBoxColumn();
+            pictureBox1 = new PictureBox();
             pnlBotones.SuspendLayout();
             pnlContenedorDelTabControl.SuspendLayout();
             tbcInferfazInicio.SuspendLayout();
+            tbpPartidas.SuspendLayout();
+            gpbCrearMesa.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pcbMisterDados).BeginInit();
+            tbpHistorialRanking.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtgvRankingVictorias).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvHistorialPartidas).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
             // pnlBotones
             // 
             pnlBotones.BackColor = Color.FromArgb(24, 40, 40);
             pnlBotones.Controls.Add(pnlBarraBlanca);
-            pnlBotones.Controls.Add(button2);
-            pnlBotones.Controls.Add(button3);
+            pnlBotones.Controls.Add(btnHistorialRanking);
             pnlBotones.Controls.Add(btnMenuPartidas);
             pnlBotones.Dock = DockStyle.Top;
             pnlBotones.Location = new Point(0, 0);
             pnlBotones.Name = "pnlBotones";
-            pnlBotones.Size = new Size(1196, 70);
+            pnlBotones.Size = new Size(724, 70);
             pnlBotones.TabIndex = 0;
             // 
             // pnlBarraBlanca
@@ -61,40 +89,32 @@
             pnlBarraBlanca.Dock = DockStyle.Bottom;
             pnlBarraBlanca.Location = new Point(0, 66);
             pnlBarraBlanca.Name = "pnlBarraBlanca";
-            pnlBarraBlanca.Size = new Size(1196, 4);
+            pnlBarraBlanca.Size = new Size(724, 4);
             pnlBarraBlanca.TabIndex = 3;
             // 
-            // button2
+            // btnHistorialRanking
             // 
-            button2.Anchor = AnchorStyles.Top;
-            button2.BackColor = Color.FromArgb(24, 60, 53);
-            button2.Location = new Point(316, 14);
-            button2.Name = "button2";
-            button2.Size = new Size(215, 56);
-            button2.TabIndex = 1;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
-            // 
-            // button3
-            // 
-            button3.Anchor = AnchorStyles.Top;
-            button3.BackColor = Color.FromArgb(24, 60, 53);
-            button3.Location = new Point(681, 16);
-            button3.Name = "button3";
-            button3.Size = new Size(230, 52);
-            button3.TabIndex = 2;
-            button3.Text = "button3";
-            button3.UseVisualStyleBackColor = false;
+            btnHistorialRanking.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnHistorialRanking.BackColor = Color.FromArgb(24, 60, 53);
+            btnHistorialRanking.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnHistorialRanking.ForeColor = Color.Snow;
+            btnHistorialRanking.Location = new Point(392, 27);
+            btnHistorialRanking.Name = "btnHistorialRanking";
+            btnHistorialRanking.Size = new Size(315, 43);
+            btnHistorialRanking.TabIndex = 1;
+            btnHistorialRanking.Text = "Historial";
+            btnHistorialRanking.UseVisualStyleBackColor = false;
+            btnHistorialRanking.Click += button2_Click;
             // 
             // btnMenuPartidas
             // 
-            btnMenuPartidas.Anchor = AnchorStyles.Top;
+            btnMenuPartidas.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnMenuPartidas.BackColor = Color.FromArgb(24, 60, 53);
             btnMenuPartidas.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnMenuPartidas.Location = new Point(36, 14);
+            btnMenuPartidas.ForeColor = Color.Snow;
+            btnMenuPartidas.Location = new Point(16, 27);
             btnMenuPartidas.Name = "btnMenuPartidas";
-            btnMenuPartidas.Size = new Size(208, 56);
+            btnMenuPartidas.Size = new Size(315, 43);
             btnMenuPartidas.TabIndex = 0;
             btnMenuPartidas.Text = "Partidas";
             btnMenuPartidas.UseVisualStyleBackColor = false;
@@ -107,68 +127,337 @@
             pnlContenedorDelTabControl.Dock = DockStyle.Fill;
             pnlContenedorDelTabControl.Location = new Point(0, 0);
             pnlContenedorDelTabControl.Name = "pnlContenedorDelTabControl";
-            pnlContenedorDelTabControl.Size = new Size(1196, 515);
+            pnlContenedorDelTabControl.Size = new Size(724, 571);
             pnlContenedorDelTabControl.TabIndex = 1;
             // 
             // tbcInferfazInicio
             // 
-            tbcInferfazInicio.Controls.Add(tabPage1);
-            tbcInferfazInicio.Controls.Add(tabPage2);
+            tbcInferfazInicio.Controls.Add(tbpPartidas);
+            tbcInferfazInicio.Controls.Add(tbpHistorialRanking);
             tbcInferfazInicio.Dock = DockStyle.Fill;
             tbcInferfazInicio.Location = new Point(0, 0);
             tbcInferfazInicio.Name = "tbcInferfazInicio";
             tbcInferfazInicio.SelectedIndex = 0;
-            tbcInferfazInicio.Size = new Size(1196, 515);
+            tbcInferfazInicio.Size = new Size(724, 571);
             tbcInferfazInicio.TabIndex = 0;
             // 
-            // tabPage1
+            // tbpPartidas
             // 
-            tabPage1.BackColor = Color.FromArgb(24, 51, 53);
-            tabPage1.Location = new Point(4, 24);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(1188, 487);
-            tabPage1.TabIndex = 0;
-            tabPage1.Text = "tabPage1";
+            tbpPartidas.BackColor = Color.FromArgb(24, 51, 53);
+            tbpPartidas.Controls.Add(gpbCrearMesa);
+            tbpPartidas.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point);
+            tbpPartidas.Location = new Point(4, 24);
+            tbpPartidas.Name = "tbpPartidas";
+            tbpPartidas.Padding = new Padding(3);
+            tbpPartidas.Size = new Size(716, 543);
+            tbpPartidas.TabIndex = 0;
+            tbpPartidas.Text = "tbpPartidas";
             // 
-            // tabPage2
+            // gpbCrearMesa
             // 
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(1188, 441);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
-            tabPage2.UseVisualStyleBackColor = true;
+            gpbCrearMesa.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            gpbCrearMesa.Controls.Add(btnCrearJugador);
+            gpbCrearMesa.Controls.Add(lblJugadorDos);
+            gpbCrearMesa.Controls.Add(cmbJugadorDos);
+            gpbCrearMesa.Controls.Add(btnCrearMesa);
+            gpbCrearMesa.Controls.Add(cmbJugadorUno);
+            gpbCrearMesa.Controls.Add(lblJugadorUno);
+            gpbCrearMesa.Controls.Add(pcbMisterDados);
+            gpbCrearMesa.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            gpbCrearMesa.ForeColor = Color.Snow;
+            gpbCrearMesa.Location = new Point(6, 54);
+            gpbCrearMesa.Name = "gpbCrearMesa";
+            gpbCrearMesa.Size = new Size(703, 481);
+            gpbCrearMesa.TabIndex = 4;
+            gpbCrearMesa.TabStop = false;
+            gpbCrearMesa.Text = "Crear Mesa de Juego";
+            // 
+            // btnCrearJugador
+            // 
+            btnCrearJugador.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnCrearJugador.BackColor = Color.FromArgb(24, 60, 53);
+            btnCrearJugador.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCrearJugador.Location = new Point(452, 139);
+            btnCrearJugador.Name = "btnCrearJugador";
+            btnCrearJugador.Size = new Size(223, 52);
+            btnCrearJugador.TabIndex = 5;
+            btnCrearJugador.Text = "Crear Jugador";
+            btnCrearJugador.UseVisualStyleBackColor = false;
+            // 
+            // lblJugadorDos
+            // 
+            lblJugadorDos.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            lblJugadorDos.AutoSize = true;
+            lblJugadorDos.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblJugadorDos.ForeColor = Color.Snow;
+            lblJugadorDos.Location = new Point(488, 65);
+            lblJugadorDos.Name = "lblJugadorDos";
+            lblJugadorDos.Size = new Size(148, 36);
+            lblJugadorDos.TabIndex = 3;
+            lblJugadorDos.Text = "Jugador Dos";
+            // 
+            // cmbJugadorDos
+            // 
+            cmbJugadorDos.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            cmbJugadorDos.Font = new Font("Segoe Print", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbJugadorDos.FormattingEnabled = true;
+            cmbJugadorDos.Location = new Point(452, 106);
+            cmbJugadorDos.MaxLength = 50;
+            cmbJugadorDos.Name = "cmbJugadorDos";
+            cmbJugadorDos.Size = new Size(223, 27);
+            cmbJugadorDos.TabIndex = 1;
+            // 
+            // btnCrearMesa
+            // 
+            btnCrearMesa.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnCrearMesa.BackColor = Color.FromArgb(24, 60, 53);
+            btnCrearMesa.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCrearMesa.Location = new Point(20, 139);
+            btnCrearMesa.Name = "btnCrearMesa";
+            btnCrearMesa.Size = new Size(223, 52);
+            btnCrearMesa.TabIndex = 4;
+            btnCrearMesa.Text = "Crear Mesa";
+            btnCrearMesa.UseVisualStyleBackColor = false;
+            btnCrearMesa.Click += btnCrearMesa_Click;
+            // 
+            // cmbJugadorUno
+            // 
+            cmbJugadorUno.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            cmbJugadorUno.Font = new Font("Segoe Print", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            cmbJugadorUno.FormattingEnabled = true;
+            cmbJugadorUno.Location = new Point(20, 106);
+            cmbJugadorUno.MaxLength = 50;
+            cmbJugadorUno.Name = "cmbJugadorUno";
+            cmbJugadorUno.Size = new Size(223, 27);
+            cmbJugadorUno.TabIndex = 0;
+            // 
+            // lblJugadorUno
+            // 
+            lblJugadorUno.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            lblJugadorUno.AutoSize = true;
+            lblJugadorUno.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblJugadorUno.ForeColor = Color.Snow;
+            lblJugadorUno.Location = new Point(53, 65);
+            lblJugadorUno.Name = "lblJugadorUno";
+            lblJugadorUno.Size = new Size(152, 36);
+            lblJugadorUno.TabIndex = 2;
+            lblJugadorUno.Text = "Jugador Uno";
+            // 
+            // pcbMisterDados
+            // 
+            pcbMisterDados.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pcbMisterDados.Image = (Image)resources.GetObject("pcbMisterDados.Image");
+            pcbMisterDados.Location = new Point(30, 65);
+            pcbMisterDados.Name = "pcbMisterDados";
+            pcbMisterDados.Size = new Size(667, 410);
+            pcbMisterDados.SizeMode = PictureBoxSizeMode.Zoom;
+            pcbMisterDados.TabIndex = 6;
+            pcbMisterDados.TabStop = false;
+            // 
+            // tbpHistorialRanking
+            // 
+            tbpHistorialRanking.BackColor = Color.FromArgb(24, 51, 53);
+            tbpHistorialRanking.Controls.Add(lblHistorialDePartidas);
+            tbpHistorialRanking.Controls.Add(lblRankingDeVictorias);
+            tbpHistorialRanking.Controls.Add(dtgvRankingVictorias);
+            tbpHistorialRanking.Controls.Add(dtgvHistorialPartidas);
+            tbpHistorialRanking.Controls.Add(pictureBox1);
+            tbpHistorialRanking.Location = new Point(4, 24);
+            tbpHistorialRanking.Name = "tbpHistorialRanking";
+            tbpHistorialRanking.Padding = new Padding(3);
+            tbpHistorialRanking.Size = new Size(716, 543);
+            tbpHistorialRanking.TabIndex = 1;
+            tbpHistorialRanking.Text = "tbpHistorialRanking";
+            // 
+            // lblHistorialDePartidas
+            // 
+            lblHistorialDePartidas.AutoSize = true;
+            lblHistorialDePartidas.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblHistorialDePartidas.ForeColor = Color.Snow;
+            lblHistorialDePartidas.Location = new Point(432, 47);
+            lblHistorialDePartidas.Name = "lblHistorialDePartidas";
+            lblHistorialDePartidas.Size = new Size(234, 36);
+            lblHistorialDePartidas.TabIndex = 4;
+            lblHistorialDePartidas.Text = "Historial de Partidas";
+            // 
+            // lblRankingDeVictorias
+            // 
+            lblRankingDeVictorias.AutoSize = true;
+            lblRankingDeVictorias.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblRankingDeVictorias.ForeColor = Color.Snow;
+            lblRankingDeVictorias.Location = new Point(4, 50);
+            lblRankingDeVictorias.Name = "lblRankingDeVictorias";
+            lblRankingDeVictorias.Size = new Size(233, 36);
+            lblRankingDeVictorias.TabIndex = 3;
+            lblRankingDeVictorias.Text = "Ranking de Victorias";
+            // 
+            // dtgvRankingVictorias
+            // 
+            dtgvRankingVictorias.AllowUserToAddRows = false;
+            dtgvRankingVictorias.AllowUserToDeleteRows = false;
+            dtgvRankingVictorias.AllowUserToResizeColumns = false;
+            dtgvRankingVictorias.AllowUserToResizeRows = false;
+            dtgvRankingVictorias.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            dtgvRankingVictorias.BackgroundColor = Color.FromArgb(24, 51, 53);
+            dtgvRankingVictorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvRankingVictorias.Columns.AddRange(new DataGridViewColumn[] { IDJugador, NombreCompleto, CantidadDeVictorias });
+            dtgvRankingVictorias.GridColor = SystemColors.ControlDarkDark;
+            dtgvRankingVictorias.Location = new Point(12, 86);
+            dtgvRankingVictorias.Name = "dtgvRankingVictorias";
+            dtgvRankingVictorias.ReadOnly = true;
+            dtgvRankingVictorias.RowHeadersVisible = false;
+            dtgvRankingVictorias.RowTemplate.Height = 25;
+            dtgvRankingVictorias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtgvRankingVictorias.Size = new Size(206, 449);
+            dtgvRankingVictorias.TabIndex = 0;
+            // 
+            // IDJugador
+            // 
+            IDJugador.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            IDJugador.HeaderText = "ID";
+            IDJugador.Name = "IDJugador";
+            IDJugador.ReadOnly = true;
+            IDJugador.Width = 43;
+            // 
+            // NombreCompleto
+            // 
+            NombreCompleto.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            NombreCompleto.HeaderText = "Jugador";
+            NombreCompleto.Name = "NombreCompleto";
+            NombreCompleto.ReadOnly = true;
+            // 
+            // CantidadDeVictorias
+            // 
+            CantidadDeVictorias.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            CantidadDeVictorias.HeaderText = "Victorias";
+            CantidadDeVictorias.Name = "CantidadDeVictorias";
+            CantidadDeVictorias.ReadOnly = true;
+            CantidadDeVictorias.Width = 77;
+            // 
+            // dtgvHistorialPartidas
+            // 
+            dtgvHistorialPartidas.AllowUserToAddRows = false;
+            dtgvHistorialPartidas.AllowUserToDeleteRows = false;
+            dtgvHistorialPartidas.AllowUserToResizeColumns = false;
+            dtgvHistorialPartidas.AllowUserToResizeRows = false;
+            dtgvHistorialPartidas.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dtgvHistorialPartidas.BackgroundColor = Color.FromArgb(24, 51, 53);
+            dtgvHistorialPartidas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtgvHistorialPartidas.Columns.AddRange(new DataGridViewColumn[] { JugadorUno, JugadorDos, Puntos, Punto, JugadorGanador, FechaPartida });
+            dtgvHistorialPartidas.Location = new Point(403, 86);
+            dtgvHistorialPartidas.Name = "dtgvHistorialPartidas";
+            dtgvHistorialPartidas.ReadOnly = true;
+            dtgvHistorialPartidas.RowHeadersVisible = false;
+            dtgvHistorialPartidas.RowTemplate.Height = 25;
+            dtgvHistorialPartidas.Size = new Size(300, 451);
+            dtgvHistorialPartidas.TabIndex = 2;
+            // 
+            // JugadorUno
+            // 
+            JugadorUno.HeaderText = "Jugador Uno";
+            JugadorUno.Name = "JugadorUno";
+            JugadorUno.ReadOnly = true;
+            // 
+            // JugadorDos
+            // 
+            JugadorDos.HeaderText = "Jugador Dos";
+            JugadorDos.Name = "JugadorDos";
+            JugadorDos.ReadOnly = true;
+            // 
+            // Puntos
+            // 
+            Puntos.HeaderText = "Puntos J1";
+            Puntos.Name = "Puntos";
+            Puntos.ReadOnly = true;
+            // 
+            // Punto
+            // 
+            Punto.HeaderText = "Puntos J2";
+            Punto.Name = "Punto";
+            Punto.ReadOnly = true;
+            // 
+            // JugadorGanador
+            // 
+            JugadorGanador.HeaderText = "Ganador";
+            JugadorGanador.Name = "JugadorGanador";
+            JugadorGanador.ReadOnly = true;
+            // 
+            // FechaPartida
+            // 
+            FechaPartida.HeaderText = "Fecha";
+            FechaPartida.Name = "FechaPartida";
+            FechaPartida.ReadOnly = true;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(51, 174);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(496, 460);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // FormInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 51, 53);
-            ClientSize = new Size(1196, 515);
+            ClientSize = new Size(724, 571);
             Controls.Add(pnlBotones);
             Controls.Add(pnlContenedorDelTabControl);
-            MinimumSize = new Size(1212, 554);
+            MaximumSize = new Size(1030, 610);
+            MinimumSize = new Size(740, 610);
             Name = "FormInicio";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormInicio";
             pnlBotones.ResumeLayout(false);
             pnlContenedorDelTabControl.ResumeLayout(false);
             tbcInferfazInicio.ResumeLayout(false);
+            tbpPartidas.ResumeLayout(false);
+            gpbCrearMesa.ResumeLayout(false);
+            gpbCrearMesa.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pcbMisterDados).EndInit();
+            tbpHistorialRanking.ResumeLayout(false);
+            tbpHistorialRanking.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dtgvRankingVictorias).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtgvHistorialPartidas).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
 
         private Panel pnlBotones;
-        private Button button2;
-        private Button button3;
+        private Button btnHistorialRanking;
         private Button btnMenuPartidas;
         private Panel pnlContenedorDelTabControl;
         private TabControl tbcInferfazInicio;
-        private TabPage tabPage1;
-        private TabPage tabPage2;
+        private TabPage tbpPartidas;
+        private TabPage tbpHistorialRanking;
         private Panel pnlBarraBlanca;
+        private ComboBox cmbJugadorDos;
+        private ComboBox cmbJugadorUno;
+        private GroupBox gpbCrearMesa;
+        private Button btnCrearJugador;
+        private Button btnCrearMesa;
+        private Label lblJugadorDos;
+        private Label lblJugadorUno;
+        private PictureBox pcbMisterDados;
+        private DataGridView dtgvRankingVictorias;
+        private PictureBox pictureBox1;
+        private DataGridView dtgvHistorialPartidas;
+        private DataGridViewTextBoxColumn IDJugador;
+        private DataGridViewTextBoxColumn NombreCompleto;
+        private DataGridViewTextBoxColumn CantidadDeVictorias;
+        private DataGridViewTextBoxColumn JugadorUno;
+        private DataGridViewTextBoxColumn JugadorDos;
+        private DataGridViewTextBoxColumn Puntos;
+        private DataGridViewTextBoxColumn Punto;
+        private DataGridViewTextBoxColumn JugadorGanador;
+        private DataGridViewTextBoxColumn FechaPartida;
+        private Label lblHistorialDePartidas;
+        private Label lblRankingDeVictorias;
     }
 }

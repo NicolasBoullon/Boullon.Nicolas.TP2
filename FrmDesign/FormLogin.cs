@@ -50,6 +50,12 @@ namespace FrmDesign
             this.Hide();
             frmInicio.ShowDialog();
             this.Close();
-        }        
+        }
+
+        private void btnAutocompletadoLogin_Click(object sender, EventArgs e)
+        {
+            txtUserLogin.Text = "Nicolas Boullon";
+            txtPassLogin.Text = "prueba123";
+        }
     }
 }
