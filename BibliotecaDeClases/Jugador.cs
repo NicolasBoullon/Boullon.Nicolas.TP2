@@ -16,7 +16,7 @@ namespace BibliotecaDeClases
 
         public Jugador()
         {
-            this.tiradas = new Tirada[5];
+            this.tiradas = new Tirada[10]; // cambie 10 tiradas en vez de 5
         }
 
         public Jugador(int id, string nombreJugador, int cantidadDeVictorias):this()
@@ -33,7 +33,7 @@ namespace BibliotecaDeClases
 
         public void HacerTirada()
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < this.tiradas.Length; i++)
             {
                 Tiradas[i] = Tirada.TirarDados();
             }

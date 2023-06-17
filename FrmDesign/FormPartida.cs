@@ -13,33 +13,35 @@ namespace FrmDesign
 {
     public partial class FormPartida : Form
     {
-        public FormPartida()
+        Jugador j1;
+        Jugador j2;
+        public FormPartida(Jugador jug1, Jugador jug2)
         {
             InitializeComponent();
-
+            Jugador j1 = jug1;
+            Jugador j2 = jug2;
         }
 
         private void FormPartida_Load(object sender, EventArgs e)
         {
-            Jugador j1 = new Jugador();
-            Jugador j2 = new Jugador();
-            JugarPartida(j1, j2);
 
+            JugarPartida(j1, j2);
         }
 
-        private void JugarPartida(Jugador j1, Jugador j2)
+        private async void JugarPartida(Jugador j1, Jugador j2)
         {
             j1.HacerTirada();
             j2.HacerTirada();
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < j1.Tiradas.Length; i++)//---- cambie 5 por lenght
             {
                 lstJ1.Items.Add(j1.Tiradas[i].MostrarTirada());
+                await Task.Delay(500);
                 lstJ2.Items.Add(j2.Tiradas[i].MostrarTirada());
+                await Task.Delay(1000);
+                //Task.Delay(1000);
             }
-
-            CalcularPuntos(j1, j2);
-
+                 CalcularPuntos(j1, j2);
         }
 
 
@@ -92,7 +94,7 @@ namespace FrmDesign
                     }
                     else
                     {
-                        for (int i = 0; i <5; i++) 
+                        for (int i = 0; i <item.tiradaDados.Length; i++) //--cambie 5 por lenght
                         {
                             if (ValidarEnabledJ1(item.TiradaDados[i]))
                             {
@@ -226,7 +228,7 @@ namespace FrmDesign
                     }
                     else
                     {
-                        for (int i = 0; i < 5; i++)
+                        for (int i = 0; i < item.tiradaDados.Length; i++) // --- cambie 5 por lenght
                             {
                                 if (ValidarEnabledJ2(item.TiradaDados[i]))
                                 {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BibliotecaDeClases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,12 @@ namespace FrmDesign
 {
     public partial class FormInicio : Form
     {
+        List<Jugador> listJugadores;
         public FormInicio()
         {
             InitializeComponent();
+            listJugadores = JugadorDAO.GetJugadores();
+            rellenarCMB();
         }
 
         private void btnMenuPartidas_Click(object sender, EventArgs e)
@@ -29,10 +33,28 @@ namespace FrmDesign
 
         private void btnCrearMesa_Click(object sender, EventArgs e)
         {
-            FormPartida frm = new FormPartida();
-           
-            frm.ShowDialog();
+            Jugador j1 = new Jugador();
+            Jugador j2 = new Jugador();
+
+            foreach (Jugador item in listJugadores)
+            {
+                j1 = item;
+                j2 = item;
+            }
+            FormPartida frm = new FormPartida(j1,j2);
+            Task.Run(() => { frm.ShowDialog(); });
+
             
+        }
+
+
+        private void rellenarCMB()
+        {
+            foreach (Jugador item in listJugadores)
+            {
+                cmbJugadorUno.Items.Add(item.NombreJugador);
+                cmbJugadorDos.Items.Add(item.NombreJugador);
+            }
         }
     }
 }
