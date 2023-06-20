@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace FrmDesign
 {
+    public delegate void DelegadoMensaje(string mensaje);
     public partial class FormLogin : Form
     {
         List<Usuario> listUsuarios;
-        public delegate void DelegadoMensaje(string mensaje);
         DelegadoMensaje alerta;
         public FormLogin()
         {
@@ -130,6 +130,10 @@ namespace FrmDesign
                     if (contraUsuarioCrear == contraConfirmarUsuarioCrear)
                     {
                         UsuarioDAO.CrearUsuario(nombreCompletoUser, nombreUsuarioCrear, contraUsuarioCrear);
+                        txtNombreCrear.Clear();
+                        txtUserCrear.Clear();
+                        txtPassCrear.Clear();
+                        txtPassConfirmarCrear.Clear();
                         alerta("Usuario creado con exito!");
                     }
                     else

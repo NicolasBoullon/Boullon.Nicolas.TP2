@@ -22,7 +22,6 @@ namespace FrmDesign
         public FormPartida(Jugador jug1, Jugador jug2)
         {
             InitializeComponent();
-            //listJugadores = SerializadorJson<List<Jugador>>.DeserializarJsonJugador<List<Jugador>>("jugador.json");
             j1 = JugadorDAO.BuscarJugadorPorNombre(jug1.NombreJugador);
             j2 = JugadorDAO.BuscarJugadorPorNombre(jug2.NombreJugador);
 
@@ -37,7 +36,7 @@ namespace FrmDesign
         private async void FormPartida_Load(object sender, EventArgs e)
         {
 
-            JugarPartida(j1, j2);//iniciamiento de partideishon
+            JugarPartida(j1, j2);
 
             await Task.Delay(8000);
 
@@ -55,7 +54,7 @@ namespace FrmDesign
             j1.HacerTirada();
             j2.HacerTirada();
             bool bandera = false;
-            for (int i = 0; i < j1.Tiradas.Length; i++)//---- cambie 5 por lenght
+            for (int i = 0; i < j1.Tiradas.Length; i++)
             {
                 if (cancellationToken.IsCancellationRequested)
                 {
@@ -66,9 +65,8 @@ namespace FrmDesign
                 //await Task.Delay(200);
                 lstJ2.Items.Add(j2.Tiradas[i].MostrarTirada());
                 await Task.Delay(500);
-                //Task.Delay(1000);
             }
-            //await Task.Delay(2000);
+
             if (!bandera)
             {
                 CalcularPuntos();
@@ -111,6 +109,8 @@ namespace FrmDesign
                 else
                 {
                     empate = true;
+                    ganador = j1.NombreJugador;
+                    perdedor = j2.NombreJugador;
                     puntosGanador = puntosUno;
                     puntosPerdedor = puntosDos;
                 }
@@ -152,15 +152,13 @@ namespace FrmDesign
                 }
                 else
                 {
-                    //foreach (Tirada t in j1.Tiradas)
-                    //{
-                    int[] valorYcantMinimo = (Partida.ContarMismoMinimoDado(item.TiradaDados));//saque la T
-                                                                                               //int[] valorYcantMaximo = (Partida.ContarMismoMaximoDado(item.TiradaDados));
+
+                    int[] valorYcantMinimo = (Partida.ContarMismoMinimoDado(item.TiradaDados));
+                                                                                           
                     int resultado = valorYcantMinimo[0] * valorYcantMinimo[1];
                     int valorAModificarDelLbl = 0;
                     Array.Sort(item.TiradaDados);
-                    //Array.Reverse(item.TiradaDados);
-                    //-------------------
+
                     int cantidadDados = 0;
                     if (ValidarEnabledJ1(valorYcantMinimo[0]))
                     {
@@ -169,7 +167,7 @@ namespace FrmDesign
                     }
                     else
                     {
-                        for (int i = 0; i < item.tiradaDados.Length; i++) //--cambie 5 por lenght
+                        for (int i = 0; i < item.tiradaDados.Length; i++) 
                         {
                             if (ValidarEnabledJ1(item.TiradaDados[i]))
                             {
@@ -225,7 +223,6 @@ namespace FrmDesign
                             lblJ1Modificar6.Enabled = false;
                             break;
                     }
-                    //}
                 }
             }
             //EVALUA TIRADAS DE JUGADOR 2
@@ -257,21 +254,19 @@ namespace FrmDesign
                 }
                 else
                 {
-                    int[] valorYcantMinimo = (Partida.ContarMismoMinimoDado(item.TiradaDados));//saque la T
-                    //int[] valorYcantMaximo = (Partida.ContarMismoMaximoDado(item.TiradaDados));
+                    int[] valorYcantMinimo = (Partida.ContarMismoMinimoDado(item.TiradaDados));
                     int resultado = valorYcantMinimo[0] * valorYcantMinimo[1];
                     int valorAModificarDelLbl = 0;
                     Array.Sort(item.TiradaDados);
-                    //Array.Reverse(item.TiradaDados);
-                    //-------------------
+
                     int cantidadDados = 0;
-                    if (ValidarEnabledJ2(valorYcantMinimo[0]))//Evaluo si el numero que mas se repite esta en uso o no
+                    if (ValidarEnabledJ2(valorYcantMinimo[0]))
                     {
                         valorAModificarDelLbl = valorYcantMinimo[0];
                     }
                     else
                     {
-                        for (int i = 0; i < item.tiradaDados.Length; i++) // --- cambie 5 por lenght
+                        for (int i = 0; i < item.tiradaDados.Length; i++) 
                         {
                             if (ValidarEnabledJ2(item.TiradaDados[i]))
                             {
@@ -324,42 +319,9 @@ namespace FrmDesign
                             lblJ2Modificar6.Enabled = false;
                             break;
                     }
-                    // }
                 }
             }
-            //int puntosUno = 0;
-            //int puntosDos = 0;
-            //int puntosGanador = 0;
-            //int puntosPerdedor = 0;
-            //bool empate = false;
-            //string ganador = "";
-            //string perdedor = "";
-            //puntosUno = PuntosTotalesJugadorUno();
-            //puntosDos = PuntosTotalesJugadorDos();
-            //bool bandera = false;
-            //if (puntosUno > puntosDos)
-            //{
-            //    ganador = j1.NombreJugador;
-            //    perdedor = j2.NombreJugador;
-            //    puntosGanador = puntosUno;
-            //    puntosPerdedor = puntosDos;
-            //    bandera = true;
-            //}
-            //else if (puntosUno < puntosDos)
-            //{
-            //    ganador = j2.NombreJugador;
-            //    perdedor = j1.NombreJugador;
-            //    puntosGanador = puntosDos;
-            //    puntosPerdedor = puntosUno;
-            //    bandera = true;
-            //}
-            //else
-            //{
-            //    empate = true;
-            //    bandera = true;
-            //}
 
-            //Task.Run(() => { abrirFormGanador(ganador, perdedor, puntosGanador, puntosPerdedor, empate); });
             return 0;
         }
 
@@ -506,36 +468,9 @@ namespace FrmDesign
             return false;
         }
 
-
-        //public int prueba(int[] tirada)
-        //{
-        //    int cantidadDados = 0;
-        //    int resultado = 0;
-        //    int puntosTotales = 0;
-        //    foreach (int item in tirada)
-        //    {
-        //        for (int i = 0; i < 6; i++)
-        //        {
-        //            if (ValidarEnabledJ1(tirada[i]))
-        //            {
-        //                foreach (int dado in tirada)
-        //                {
-        //                    if (dado == tirada[i])
-        //                    {
-        //                        cantidadDados++;
-        //                    }
-        //                }
-        //                resultado = cantidadDados * tirada[i];
-        //                return resultado;
-        //            }
-        //        }
-        //    }
-
-        //    return 0;
-        //}
-
         private void btnCancelarMesa_Click(object sender, EventArgs e)
         {
+            MessageBox.Show("Mesa Cancelada");
             banderaMesa = true;
             cancellationSource.Cancel();
         }

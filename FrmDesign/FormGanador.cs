@@ -37,8 +37,7 @@ namespace FrmDesign
 
         private void FormGanador_Load(object sender, EventArgs e)
         {
-            //MostrarGanador informarResultados = mostrarResultados;
-            //informarResultados(gan, per, pGan, pPerd, emp);
+
             mostrarFinal(gan, per, pGan, pPerd, emp);
             SerializadorJson<List<Partida>> serial = new SerializadorJson<List<Partida>>();
             Partida partida = new Partida(gan, per, pGan, pPerd, DateTime.Now);
