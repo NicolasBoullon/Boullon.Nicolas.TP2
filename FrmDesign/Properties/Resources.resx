@@ -127,6 +127,9 @@
   <data name="god" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\god.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="2 sin fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\2 sin fondo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Daddos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Daddos.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,7 +145,7 @@
   <data name="porno de viejas cachondas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\porno de viejas cachondas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="2 sin fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\2 sin fondo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="3 sin fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\3 sin fondo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

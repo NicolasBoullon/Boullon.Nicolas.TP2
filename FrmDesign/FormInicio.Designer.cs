@@ -48,9 +48,6 @@
             lblHistorialDePartidas = new Label();
             lblRankingDeVictorias = new Label();
             dtgvRankingVictorias = new DataGridView();
-            IDJugador = new DataGridViewTextBoxColumn();
-            NombreCompleto = new DataGridViewTextBoxColumn();
-            CantidadDeVictorias = new DataGridViewTextBoxColumn();
             dtgvHistorialPartidas = new DataGridView();
             JugadorUno = new DataGridViewTextBoxColumn();
             JugadorDos = new DataGridViewTextBoxColumn();
@@ -183,6 +180,7 @@
             btnCrearJugador.TabIndex = 5;
             btnCrearJugador.Text = "Crear Jugador";
             btnCrearJugador.UseVisualStyleBackColor = false;
+            btnCrearJugador.Click += btnCrearJugador_Click;
             // 
             // lblJugadorDos
             // 
@@ -199,9 +197,11 @@
             // cmbJugadorDos
             // 
             cmbJugadorDos.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            cmbJugadorDos.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbJugadorDos.Font = new Font("Segoe Print", 8F, FontStyle.Regular, GraphicsUnit.Point);
             cmbJugadorDos.FormattingEnabled = true;
             cmbJugadorDos.Location = new Point(452, 106);
+            cmbJugadorDos.MaxDropDownItems = 100;
             cmbJugadorDos.MaxLength = 50;
             cmbJugadorDos.Name = "cmbJugadorDos";
             cmbJugadorDos.Size = new Size(223, 27);
@@ -223,13 +223,16 @@
             // cmbJugadorUno
             // 
             cmbJugadorUno.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            cmbJugadorUno.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbJugadorUno.Font = new Font("Segoe Print", 8F, FontStyle.Regular, GraphicsUnit.Point);
             cmbJugadorUno.FormattingEnabled = true;
             cmbJugadorUno.Location = new Point(20, 106);
+            cmbJugadorUno.MaxDropDownItems = 100;
             cmbJugadorUno.MaxLength = 50;
             cmbJugadorUno.Name = "cmbJugadorUno";
             cmbJugadorUno.Size = new Size(223, 27);
             cmbJugadorUno.TabIndex = 0;
+            cmbJugadorUno.TextChanged += cmbJugadorUno_TextChanged;
             // 
             // lblJugadorUno
             // 
@@ -300,7 +303,6 @@
             dtgvRankingVictorias.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             dtgvRankingVictorias.BackgroundColor = Color.FromArgb(24, 51, 53);
             dtgvRankingVictorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtgvRankingVictorias.Columns.AddRange(new DataGridViewColumn[] { IDJugador, NombreCompleto, CantidadDeVictorias });
             dtgvRankingVictorias.GridColor = SystemColors.ControlDarkDark;
             dtgvRankingVictorias.Location = new Point(12, 86);
             dtgvRankingVictorias.Name = "dtgvRankingVictorias";
@@ -308,31 +310,8 @@
             dtgvRankingVictorias.RowHeadersVisible = false;
             dtgvRankingVictorias.RowTemplate.Height = 25;
             dtgvRankingVictorias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtgvRankingVictorias.Size = new Size(206, 449);
+            dtgvRankingVictorias.Size = new Size(244, 449);
             dtgvRankingVictorias.TabIndex = 0;
-            // 
-            // IDJugador
-            // 
-            IDJugador.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            IDJugador.HeaderText = "ID";
-            IDJugador.Name = "IDJugador";
-            IDJugador.ReadOnly = true;
-            IDJugador.Width = 43;
-            // 
-            // NombreCompleto
-            // 
-            NombreCompleto.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            NombreCompleto.HeaderText = "Jugador";
-            NombreCompleto.Name = "NombreCompleto";
-            NombreCompleto.ReadOnly = true;
-            // 
-            // CantidadDeVictorias
-            // 
-            CantidadDeVictorias.AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            CantidadDeVictorias.HeaderText = "Victorias";
-            CantidadDeVictorias.Name = "CantidadDeVictorias";
-            CantidadDeVictorias.ReadOnly = true;
-            CantidadDeVictorias.Width = 77;
             // 
             // dtgvHistorialPartidas
             // 
@@ -344,12 +323,12 @@
             dtgvHistorialPartidas.BackgroundColor = Color.FromArgb(24, 51, 53);
             dtgvHistorialPartidas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvHistorialPartidas.Columns.AddRange(new DataGridViewColumn[] { JugadorUno, JugadorDos, Puntos, Punto, JugadorGanador, FechaPartida });
-            dtgvHistorialPartidas.Location = new Point(403, 86);
+            dtgvHistorialPartidas.Location = new Point(423, 86);
             dtgvHistorialPartidas.Name = "dtgvHistorialPartidas";
             dtgvHistorialPartidas.ReadOnly = true;
             dtgvHistorialPartidas.RowHeadersVisible = false;
             dtgvHistorialPartidas.RowTemplate.Height = 25;
-            dtgvHistorialPartidas.Size = new Size(300, 451);
+            dtgvHistorialPartidas.Size = new Size(280, 451);
             dtgvHistorialPartidas.TabIndex = 2;
             // 
             // JugadorUno
@@ -392,7 +371,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(51, 174);
+            pictureBox1.Location = new Point(76, 172);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(496, 460);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -448,9 +427,6 @@
         private DataGridView dtgvRankingVictorias;
         private PictureBox pictureBox1;
         private DataGridView dtgvHistorialPartidas;
-        private DataGridViewTextBoxColumn IDJugador;
-        private DataGridViewTextBoxColumn NombreCompleto;
-        private DataGridViewTextBoxColumn CantidadDeVictorias;
         private DataGridViewTextBoxColumn JugadorUno;
         private DataGridViewTextBoxColumn JugadorDos;
         private DataGridViewTextBoxColumn Puntos;

@@ -27,3 +27,5 @@ C:\Users\nicol\source\repos\2023\Boullon.Nicolas.TP2\FrmDesign\obj\Debug\net6.0-
 C:\Users\nicol\source\repos\2023\Boullon.Nicolas.TP2\FrmDesign\obj\Debug\net6.0-windows\FrmDesign.FormLogin.resources
 C:\Users\nicol\source\repos\2023\Boullon.Nicolas.TP2\FrmDesign\obj\Debug\net6.0-windows\FrmDesign.FormInicio.resources
 C:\Users\nicol\source\repos\2023\Boullon.Nicolas.TP2\FrmDesign\obj\Debug\net6.0-windows\FrmDesign.FormPartida.resources
+C:\Users\nicol\source\repos\2023\Boullon.Nicolas.TP2\FrmDesign\obj\Debug\net6.0-windows\FrmDesign.FormGanador.resources
+C:\Users\nicol\source\repos\2023\Boullon.Nicolas.TP2\FrmDesign\obj\Debug\net6.0-windows\FrmDesign.FormCrearJugador.resources

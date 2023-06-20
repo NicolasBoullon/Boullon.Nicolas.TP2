@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPartida));
             pictureBox1 = new PictureBox();
             gpbJugadorUno = new GroupBox();
             lblJ1ModificarGenerala = new Label();
@@ -75,27 +76,25 @@
             lblJ2Escalera = new Label();
             lblJ2Al5 = new Label();
             lblJ2Al6 = new Label();
-            lblGanador = new Label();
-            pcbGanador = new PictureBox();
             btnCancelarMesa = new Button();
             btnSalir = new Button();
-            lblPuntosTotalesJ1 = new Label();
-            lblPuntosTotalesJ2 = new Label();
+            lblCalculandoPuntos = new Label();
+            lblPuntosJ1 = new Label();
+            lblPuntosJ2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             gpbJugadorUno.SuspendLayout();
             gpbTiradasJ1.SuspendLayout();
             gpbJugadorDos.SuspendLayout();
             gpbTiradasJ2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pcbGanador).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             pictureBox1.Image = Properties.Resources.porno_de_viejas_cachondas;
-            pictureBox1.Location = new Point(325, -35);
+            pictureBox1.Location = new Point(325, -30);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(189, 592);
+            pictureBox1.Size = new Size(189, 546);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
@@ -609,41 +608,19 @@
             lblJ2Al6.TabIndex = 16;
             lblJ2Al6.Text = "Al 6 :";
             // 
-            // lblGanador
-            // 
-            lblGanador.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            lblGanador.AutoSize = true;
-            lblGanador.Font = new Font("Segoe Print", 30.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblGanador.ForeColor = Color.Snow;
-            lblGanador.Location = new Point(110, 486);
-            lblGanador.Name = "lblGanador";
-            lblGanador.Size = new Size(220, 71);
-            lblGanador.TabIndex = 3;
-            lblGanador.Text = "Ganador:";
-            // 
-            // pcbGanador
-            // 
-            pcbGanador.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            pcbGanador.Image = Properties.Resources._2_sin_fondo;
-            pcbGanador.Location = new Point(-53, 444);
-            pcbGanador.Name = "pcbGanador";
-            pcbGanador.Size = new Size(234, 151);
-            pcbGanador.SizeMode = PictureBoxSizeMode.Zoom;
-            pcbGanador.TabIndex = 4;
-            pcbGanador.TabStop = false;
-            // 
             // btnCancelarMesa
             // 
             btnCancelarMesa.Anchor = AnchorStyles.Bottom;
             btnCancelarMesa.BackColor = Color.FromArgb(24, 60, 53);
             btnCancelarMesa.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnCancelarMesa.ForeColor = Color.Snow;
-            btnCancelarMesa.Location = new Point(325, 35);
+            btnCancelarMesa.Location = new Point(325, 481);
             btnCancelarMesa.Name = "btnCancelarMesa";
             btnCancelarMesa.Size = new Size(189, 35);
             btnCancelarMesa.TabIndex = 6;
             btnCancelarMesa.Text = "Cancelar Mesa";
             btnCancelarMesa.UseVisualStyleBackColor = false;
+            btnCancelarMesa.Click += btnCancelarMesa_Click;
             // 
             // btnSalir
             // 
@@ -651,56 +628,64 @@
             btnSalir.BackColor = Color.FromArgb(24, 60, 53);
             btnSalir.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnSalir.ForeColor = Color.Snow;
-            btnSalir.Location = new Point(643, 524);
+            btnSalir.Location = new Point(643, 478);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(189, 38);
             btnSalir.TabIndex = 7;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = false;
             // 
-            // lblPuntosTotalesJ1
+            // lblCalculandoPuntos
             // 
-            lblPuntosTotalesJ1.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
-            lblPuntosTotalesJ1.AutoSize = true;
-            lblPuntosTotalesJ1.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPuntosTotalesJ1.ForeColor = Color.Snow;
-            lblPuntosTotalesJ1.Location = new Point(168, 433);
-            lblPuntosTotalesJ1.Name = "lblPuntosTotalesJ1";
-            lblPuntosTotalesJ1.Size = new Size(102, 36);
-            lblPuntosTotalesJ1.TabIndex = 9;
-            lblPuntosTotalesJ1.Text = "Puntos: ";
+            lblCalculandoPuntos.AutoSize = true;
+            lblCalculandoPuntos.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCalculandoPuntos.ForeColor = Color.Snow;
+            lblCalculandoPuntos.Location = new Point(12, 433);
+            lblCalculandoPuntos.Name = "lblCalculandoPuntos";
+            lblCalculandoPuntos.Size = new Size(235, 36);
+            lblCalculandoPuntos.TabIndex = 11;
+            lblCalculandoPuntos.Text = "Calculando Puntaje...";
             // 
-            // lblPuntosTotalesJ2
+            // lblPuntosJ1
             // 
-            lblPuntosTotalesJ2.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            lblPuntosTotalesJ2.AutoSize = true;
-            lblPuntosTotalesJ2.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPuntosTotalesJ2.ForeColor = Color.Snow;
-            lblPuntosTotalesJ2.Location = new Point(682, 433);
-            lblPuntosTotalesJ2.Name = "lblPuntosTotalesJ2";
-            lblPuntosTotalesJ2.Size = new Size(102, 36);
-            lblPuntosTotalesJ2.TabIndex = 10;
-            lblPuntosTotalesJ2.Text = "Puntos: ";
+            lblPuntosJ1.AutoSize = true;
+            lblPuntosJ1.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPuntosJ1.ForeColor = Color.Snow;
+            lblPuntosJ1.Location = new Point(12, 477);
+            lblPuntosJ1.Name = "lblPuntosJ1";
+            lblPuntosJ1.Size = new Size(94, 36);
+            lblPuntosJ1.TabIndex = 12;
+            lblPuntosJ1.Text = "Puntos:";
+            // 
+            // lblPuntosJ2
+            // 
+            lblPuntosJ2.AutoSize = true;
+            lblPuntosJ2.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPuntosJ2.ForeColor = Color.Snow;
+            lblPuntosJ2.Location = new Point(533, 433);
+            lblPuntosJ2.Name = "lblPuntosJ2";
+            lblPuntosJ2.Size = new Size(94, 36);
+            lblPuntosJ2.TabIndex = 13;
+            lblPuntosJ2.Text = "Puntos:";
             // 
             // FormPartida
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 51, 53);
-            ClientSize = new Size(844, 574);
-            Controls.Add(lblPuntosTotalesJ2);
-            Controls.Add(lblPuntosTotalesJ1);
+            ClientSize = new Size(844, 528);
+            Controls.Add(lblPuntosJ2);
+            Controls.Add(lblPuntosJ1);
+            Controls.Add(lblCalculandoPuntos);
             Controls.Add(btnSalir);
             Controls.Add(btnCancelarMesa);
             Controls.Add(gpbJugadorUno);
-            Controls.Add(lblGanador);
-            Controls.Add(pcbGanador);
             Controls.Add(gpbJugadorDos);
             Controls.Add(pictureBox1);
-            MinimumSize = new Size(860, 613);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormPartida";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormPartida";
+            Text = "A jugar!";
             Load += FormPartida_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             gpbJugadorUno.ResumeLayout(false);
@@ -709,7 +694,6 @@
             gpbJugadorDos.ResumeLayout(false);
             gpbJugadorDos.PerformLayout();
             gpbTiradasJ2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pcbGanador).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -719,8 +703,6 @@
         private PictureBox pictureBox1;
         private GroupBox gpbJugadorUno;
         private GroupBox gpbJugadorDos;
-        private Label lblGanador;
-        private PictureBox pcbGanador;
         private Label lblJ1Generala;
         private Label lblJ1Poker;
         private Label lblJ1Full;
@@ -745,8 +727,6 @@
         private Button btnSalir;
         private GroupBox gpbTiradasJ1;
         private GroupBox gpbTiradasJ2;
-        private Label lblPuntosTotalesJ1;
-        private Label lblPuntosTotalesJ2;
         private ListBox lstJ1;
         private ListBox lstJ2;
         public Label lblJ1ModificarGenerala;
@@ -769,5 +749,8 @@
         public Label lblJ2Modificar3;
         public Label lblJ2Modificar2;
         public Label lblJ2Modificar1;
+        private Label lblCalculandoPuntos;
+        private Label lblPuntosJ1;
+        private Label lblPuntosJ2;
     }
 }

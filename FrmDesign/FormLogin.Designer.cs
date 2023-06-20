@@ -91,9 +91,11 @@
             txtPassConfirmarCrear.Anchor = AnchorStyles.None;
             txtPassConfirmarCrear.Font = new Font("Yu Gothic UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             txtPassConfirmarCrear.Location = new Point(165, 134);
+            txtPassConfirmarCrear.MaxLength = 50;
             txtPassConfirmarCrear.Name = "txtPassConfirmarCrear";
             txtPassConfirmarCrear.Size = new Size(175, 27);
             txtPassConfirmarCrear.TabIndex = 22;
+            txtPassConfirmarCrear.KeyPress += txtPassConfirmarCrear_KeyPress;
             // 
             // lblConfirmarContra
             // 
@@ -117,6 +119,7 @@
             btnRegistrarse.TabIndex = 14;
             btnRegistrarse.Text = "Registrarme";
             btnRegistrarse.UseVisualStyleBackColor = false;
+            btnRegistrarse.Click += btnRegistrarse_Click;
             // 
             // lblNombreCompletoCrear
             // 
@@ -134,18 +137,22 @@
             txtNombreCrear.Anchor = AnchorStyles.None;
             txtNombreCrear.Font = new Font("Yu Gothic UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             txtNombreCrear.Location = new Point(165, 35);
+            txtNombreCrear.MaxLength = 50;
             txtNombreCrear.Name = "txtNombreCrear";
             txtNombreCrear.Size = new Size(175, 27);
             txtNombreCrear.TabIndex = 20;
+            txtNombreCrear.KeyPress += txtNombreCrear_KeyPress;
             // 
             // txtPassCrear
             // 
             txtPassCrear.Anchor = AnchorStyles.None;
             txtPassCrear.Font = new Font("Yu Gothic UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             txtPassCrear.Location = new Point(165, 101);
+            txtPassCrear.MaxLength = 50;
             txtPassCrear.Name = "txtPassCrear";
             txtPassCrear.Size = new Size(175, 27);
             txtPassCrear.TabIndex = 18;
+            txtPassCrear.KeyPress += txtPassCrear_KeyPress;
             // 
             // lblNombreDeUsuarioCrear
             // 
@@ -163,9 +170,11 @@
             txtUserCrear.Anchor = AnchorStyles.None;
             txtUserCrear.Font = new Font("Yu Gothic UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             txtUserCrear.Location = new Point(165, 68);
+            txtUserCrear.MaxLength = 50;
             txtUserCrear.Name = "txtUserCrear";
             txtUserCrear.Size = new Size(175, 27);
             txtUserCrear.TabIndex = 17;
+            txtUserCrear.KeyPress += txtUserCrear_KeyPress;
             // 
             // lblContraseñaCrearUser
             // 
@@ -228,19 +237,23 @@
             txtPassLogin.Anchor = AnchorStyles.None;
             txtPassLogin.Font = new Font("Yu Gothic UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             txtPassLogin.Location = new Point(162, 90);
+            txtPassLogin.MaxLength = 50;
             txtPassLogin.Name = "txtPassLogin";
             txtPassLogin.Size = new Size(175, 27);
             txtPassLogin.TabIndex = 9;
             txtPassLogin.UseSystemPasswordChar = true;
+            txtPassLogin.KeyPress += txtPassLogin_KeyPress;
             // 
             // txtUserLogin
             // 
             txtUserLogin.Anchor = AnchorStyles.None;
             txtUserLogin.Font = new Font("Yu Gothic UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point);
             txtUserLogin.Location = new Point(162, 49);
+            txtUserLogin.MaxLength = 50;
             txtUserLogin.Name = "txtUserLogin";
             txtUserLogin.Size = new Size(175, 27);
             txtUserLogin.TabIndex = 8;
+            txtUserLogin.KeyPress += txtUserLogin_KeyPress;
             // 
             // lblPass
             // 

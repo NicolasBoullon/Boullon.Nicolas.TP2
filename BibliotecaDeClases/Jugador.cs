@@ -13,7 +13,7 @@ namespace BibliotecaDeClases
         private string nombreJugador;
         private int cantidadDeVictorias;
         private Tirada[] tiradas;
-
+        
         public Jugador()
         {
             this.tiradas = new Tirada[10]; // cambie 10 tiradas en vez de 5
@@ -50,7 +50,7 @@ namespace BibliotecaDeClases
 
         public static bool operator ==(Jugador j1, Jugador j2)
         {
-            return j1.id == j2.id;
+            return j1.NombreJugador == j2.NombreJugador;
         }
 
         public static bool operator !=(Jugador j1, Jugador j2)
@@ -67,5 +67,29 @@ namespace BibliotecaDeClases
             }
             return sb.ToString();
         }
+
+        private static bool VerificarJugadores(Jugador j1, Jugador j2)
+        {
+            List<Jugador> listJugador = JugadorDAO.GetJugadores();
+            bool jugadorUno = false;
+            bool jugadorDos = false;
+            foreach (Jugador jug in listJugador)
+            {
+                if (jug == j1)
+                {
+                    jugadorUno = true;
+                }
+                if (jug == j2)
+                {
+                    jugadorDos = true;
+                }
+            }
+            if (jugadorUno && jugadorDos)
+            {
+                return true;
+            }
+            return false;
+        }
+
     }
 }

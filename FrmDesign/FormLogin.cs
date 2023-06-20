@@ -14,6 +14,7 @@ namespace FrmDesign
     public partial class FormLogin : Form
     {
         List<Usuario> listUsuarios;
+
         public FormLogin()
         {
             InitializeComponent();
@@ -56,6 +57,98 @@ namespace FrmDesign
         {
             txtUserLogin.Text = "Nicolas Boullon";
             txtPassLogin.Text = "prueba123";
+        }
+
+        private void txtUserLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                MessageBox.Show("Solo Ingresar Letras");
+                e.Handled = true;
+            }
+        }
+
+        private void txtPassLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Solo Ingresar Letras y Numeros. Sin espacios");
+                e.Handled = true;
+            }
+        }
+
+        private void txtNombreCrear_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                MessageBox.Show("Solo Ingresar Letras");
+                e.Handled = true;
+            }
+        }
+
+        private void txtUserCrear_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
+            {
+                MessageBox.Show("Solo Ingresar Letras");
+                e.Handled = true;
+            }
+        }
+
+        private void txtPassCrear_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Solo Ingresar Letras y Numeros. Sin espacios");
+                e.Handled = true;
+            }
+        }
+
+        private void txtPassConfirmarCrear_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                MessageBox.Show("Solo Ingresar Letras y Numeros. Sin espacios");
+                e.Handled = true;
+            }
+        }
+
+        private void btnRegistrarse_Click(object sender, EventArgs e)
+        {
+            string nombreCompletoUser = txtNombreCrear.Text;
+            string nombreUsuarioCrear = txtUserCrear.Text;
+            string contraUsuarioCrear = txtPassCrear.Text;
+            string contraConfirmarUsuarioCrear = txtPassConfirmarCrear.Text;
+            if (!VerificarUsuario(nombreUsuarioCrear))
+            {
+                if (contraUsuarioCrear == contraConfirmarUsuarioCrear)
+                {
+                    UsuarioDAO.CrearUsuario(nombreCompletoUser, nombreUsuarioCrear, contraUsuarioCrear);
+                }
+                else
+                {
+                    MessageBox.Show("Las contraseñas no coinciden!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Nombre de Usuario en uso. Ingrese otro nombre de usuario.");
+            }
+
+        }
+
+        private bool VerificarUsuario(string nombreUsuarioCrear)
+        {
+            listUsuarios = UsuarioDAO.GetUsuarios();
+            foreach (Usuario user in listUsuarios)
+            {
+                if (user.UsuarioLogin == nombreUsuarioCrear)
+                {
+                    return true;
+                }
+            }
+
+            return false;
         }
     }
 }

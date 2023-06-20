@@ -73,6 +73,16 @@ namespace FrmDesign.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3_sin_fondo {
+            get {
+                object obj = ResourceManager.GetObject("3 sin fondo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap asdfasdfasdfa {
             get {
                 object obj = ResourceManager.GetObject("asdfasdfasdfa", resourceCulture);

@@ -20,6 +20,34 @@ namespace BibliotecaDeClases
             sqlCommand.Connection = sqlConnection;
         }
 
+        public static void CrearUsuario(string nombreJugador,string usuarioLogin,string usuarioPassword)
+        {
+            string query = "INSERT INTO USUARIOS VALUES (@nombreCompleto, @usuarioLogin, @usuarioPassword)";
+            if (!string.IsNullOrEmpty(nombreJugador))
+            {
+                try
+                {
+                    sqlConnection.Open();
+                    sqlCommand.Parameters.Clear();
+                    sqlCommand.CommandText = query;
+                    sqlCommand.Parameters.AddWithValue("@nombreCompleto", nombreJugador);
+                    sqlCommand.Parameters.AddWithValue("@usuarioLogin", usuarioLogin);
+                    sqlCommand.Parameters.AddWithValue("@usuarioPassword", usuarioPassword);
+                    sqlCommand.ExecuteNonQuery();
+                }
+                catch
+                {
+                    throw new Exception("No se pudo Crear el nuevo usuario");
+                }
+                finally
+                {
+                    if (sqlCommand is not null && sqlConnection.State == System.Data.ConnectionState.Open)
+                    {
+                        sqlConnection.Close();
+                    }
+                }
+            }
+        }
         public static List<Usuario> GetUsuarios()
         {
             List<Usuario> list = new List<Usuario>();
