@@ -9,6 +9,7 @@ namespace BibliotecaDeClases
 {
     public  class SerializadorJson<T>: ISerializadoraJson<T> where T : class
     {
+        public SerializadorJson() { }
         public  T DeserializarJson<T>(string ruta)
         {
             try
@@ -43,39 +44,39 @@ namespace BibliotecaDeClases
             }
         }
 
-        public static T DeserializarJsonJugador<T>(string ruta)
-        {
-            try
-            {
-                string objetoJson = File.ReadAllText(ruta);
+        //public static T DeserializarJsonJugador<T>(string ruta)
+        //{
+        //    try
+        //    {
+        //        string objetoJson = File.ReadAllText(ruta);
 
-                T objeto = JsonSerializer.Deserialize<T>(objetoJson);
+        //        T objeto = JsonSerializer.Deserialize<T>(objetoJson);
 
-                return objeto;
-            }
-            catch
-            {
-                throw new Exception("Hubo un error al Deserializar en formato Json");
-            }
-        }
-        public static void SerializarJsonJugador<T>(string ruta, T objeto)
-        {
-            try
-            {
-                JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions();
-                jsonSerializerOptions.WriteIndented = true;
+        //        return objeto;
+        //    }
+        //    catch
+        //    {
+        //        throw new Exception("Hubo un error al Deserializar en formato Json");
+        //    }
+        //}
+        //public static void SerializarJsonJugador<T>(string ruta, T objeto)
+        //{
+        //    try
+        //    {
+        //        JsonSerializerOptions jsonSerializerOptions = new JsonSerializerOptions();
+        //        jsonSerializerOptions.WriteIndented = true;
 
-                string objetoJson = JsonSerializer.Serialize(objeto, jsonSerializerOptions);
+        //        string objetoJson = JsonSerializer.Serialize(objeto, jsonSerializerOptions);
 
-                File.WriteAllText(ruta, objetoJson);
+        //        File.WriteAllText(ruta, objetoJson);
 
-            }
-            catch
-            {
+        //    }
+        //    catch
+        //    {
 
-                throw new Exception("Hubo un error al Serializar en formato Json");
-            }
-        }
+        //        throw new Exception("Hubo un error al Serializar en formato Json");
+        //    }
+        //}
 
 
     }

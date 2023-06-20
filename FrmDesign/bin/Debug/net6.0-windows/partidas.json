@@ -1,0 +1,107 @@
+[
+  {
+    "JugadorGanador": "Will Smith",
+    "JugadorPerdedor": "Shakira",
+    "CantidadPuntosJugadorUno": 65,
+    "CantidadPuntosJugadorDos": 34,
+    "HoraJugada": "2023-06-20T01:50:36.6953006-03:00"
+  },
+  {
+    "JugadorGanador": "Beyonc\u00E9",
+    "JugadorPerdedor": "Brad Pitt",
+    "CantidadPuntosJugadorUno": 75,
+    "CantidadPuntosJugadorDos": 36,
+    "HoraJugada": "2023-06-20T01:56:03.6497056-03:00"
+  },
+  {
+    "JugadorGanador": "Beyonc\u00E9",
+    "JugadorPerdedor": "Brad Pitt",
+    "CantidadPuntosJugadorUno": 41,
+    "CantidadPuntosJugadorDos": 38,
+    "HoraJugada": "2023-06-20T01:57:58.6998578-03:00"
+  },
+  {
+    "JugadorGanador": "Megan Fox",
+    "JugadorPerdedor": "Nicolas Boullon",
+    "CantidadPuntosJugadorUno": 67,
+    "CantidadPuntosJugadorDos": 43,
+    "HoraJugada": "2023-06-20T01:58:24.6596284-03:00"
+  },
+  {
+    "JugadorGanador": "Nicolas Boullon",
+    "JugadorPerdedor": "Priyanka Chopra",
+    "CantidadPuntosJugadorUno": 60,
+    "CantidadPuntosJugadorDos": 32,
+    "HoraJugada": "2023-06-20T02:20:04.4968396-03:00"
+  },
+  {
+    "JugadorGanador": "Johnny Depp",
+    "JugadorPerdedor": "Nicolas Boullon",
+    "CantidadPuntosJugadorUno": 43,
+    "CantidadPuntosJugadorDos": 42,
+    "HoraJugada": "2023-06-20T02:21:16.0442876-03:00"
+  },
+  {
+    "JugadorGanador": "Johnny Depp",
+    "JugadorPerdedor": "Nicolas Boullon",
+    "CantidadPuntosJugadorUno": 76,
+    "CantidadPuntosJugadorDos": 73,
+    "HoraJugada": "2023-06-20T02:21:18.0009105-03:00"
+  },
+  {
+    "JugadorGanador": "Johnny Depp",
+    "JugadorPerdedor": "Nicolas Boullon",
+    "CantidadPuntosJugadorUno": 60,
+    "CantidadPuntosJugadorDos": 27,
+    "HoraJugada": "2023-06-20T02:22:21.6843489-03:00"
+  },
+  {
+    "JugadorGanador": "Chris Hemsworth",
+    "JugadorPerdedor": "Zlatan Ibrahimovic",
+    "CantidadPuntosJugadorUno": 66,
+    "CantidadPuntosJugadorDos": 34,
+    "HoraJugada": "2023-06-20T02:22:54.761758-03:00"
+  },
+  {
+    "JugadorGanador": "Zlatan Ibrahimovic",
+    "JugadorPerdedor": "Chris Hemsworth",
+    "CantidadPuntosJugadorUno": 38,
+    "CantidadPuntosJugadorDos": 36,
+    "HoraJugada": "2023-06-20T02:22:55.3525535-03:00"
+  },
+  {
+    "JugadorGanador": "Zlatan Ibrahimovic",
+    "JugadorPerdedor": "Chris Hemsworth",
+    "CantidadPuntosJugadorUno": 49,
+    "CantidadPuntosJugadorDos": 36,
+    "HoraJugada": "2023-06-20T02:22:56.2284655-03:00"
+  },
+  {
+    "JugadorGanador": "Chris Hemsworth",
+    "JugadorPerdedor": "Zlatan Ibrahimovic",
+    "CantidadPuntosJugadorUno": 52,
+    "CantidadPuntosJugadorDos": 38,
+    "HoraJugada": "2023-06-20T02:22:57.7766629-03:00"
+  },
+  {
+    "JugadorGanador": "Zlatan Ibrahimovic",
+    "JugadorPerdedor": "Chris Hemsworth",
+    "CantidadPuntosJugadorUno": 85,
+    "CantidadPuntosJugadorDos": 68,
+    "HoraJugada": "2023-06-20T02:23:27.0042438-03:00"
+  },
+  {
+    "JugadorGanador": "Zlatan Ibrahimovic",
+    "JugadorPerdedor": "Chris Hemsworth",
+    "CantidadPuntosJugadorUno": 49,
+    "CantidadPuntosJugadorDos": 35,
+    "HoraJugada": "2023-06-20T02:24:32.0452969-03:00"
+  },
+  {
+    "JugadorGanador": "Chris Hemsworth",
+    "JugadorPerdedor": "Zlatan Ibrahimovic",
+    "CantidadPuntosJugadorUno": 70,
+    "CantidadPuntosJugadorDos": 60,
+    "HoraJugada": "2023-06-20T02:24:34.0673456-03:00"
+  }
+]

@@ -51,7 +51,7 @@ namespace BibliotecaDeClases
         public static List<Jugador> GetJugadores()
         {
             List<Jugador> list = new List<Jugador>();
-            string query = "SELECT * FROM Jugadores";
+            string query = "SELECT * FROM JUGADORES";
             try
             {
                 sqlConnection.Open();
@@ -84,7 +84,38 @@ namespace BibliotecaDeClases
 
 
         }
-
+        public static Jugador BuscarJugadorPorNombre(string nombreJugador)
+        {
+            Jugador? jugador = null;
+            string query = "SELECT * FROM JUGADORES WHERE nombreJugador=@nombreJugador";
+            try
+            {
+                sqlConnection.Open();
+                sqlCommand.CommandText = query;
+                sqlCommand.Parameters.Clear();
+                sqlCommand.Parameters.AddWithValue("@nombreJugador", nombreJugador);
+                SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
+                if (sqlDataReader.Read())
+                {
+                    if (!sqlDataReader.IsDBNull(1))
+                    {
+                        jugador = new Jugador(sqlDataReader.GetInt32(0), sqlDataReader.GetString(1), sqlDataReader.GetInt32(2));
+                    }
+                }
+                return jugador!;
+            }
+            catch (Exception)
+            {
+                throw new Exception("No se pudo leer de la base de datos");
+            }
+            finally
+            {
+                if (sqlCommand is not null && sqlConnection.State == System.Data.ConnectionState.Open)
+                {
+                    sqlConnection.Close();
+                }
+            }
+        }
         public static List<Jugador> TraerRankingDeVictorias()
         {
             List<Jugador> jugadores = new List<Jugador>();
@@ -121,7 +152,7 @@ namespace BibliotecaDeClases
 
         public static void ActualizarVictoriasJugadorDAO(Jugador jugador)
         {
-            string query = "UPDATE Jugadores SET cantidadDeVictorias=@cantidadDeVictorias WHERE id=@id";
+            string query = "UPDATE JUGADORES SET cantidadDeVictorias=@cantidadDeVictorias WHERE id=@id";
             try
             {
                 sqlConnection.Open();

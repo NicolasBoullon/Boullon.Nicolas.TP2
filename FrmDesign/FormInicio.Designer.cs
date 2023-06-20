@@ -174,7 +174,7 @@
             btnCrearJugador.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnCrearJugador.BackColor = Color.FromArgb(24, 60, 53);
             btnCrearJugador.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCrearJugador.Location = new Point(452, 139);
+            btnCrearJugador.Location = new Point(452, 137);
             btnCrearJugador.Name = "btnCrearJugador";
             btnCrearJugador.Size = new Size(223, 52);
             btnCrearJugador.TabIndex = 5;
@@ -200,7 +200,7 @@
             cmbJugadorDos.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbJugadorDos.Font = new Font("Segoe Print", 8F, FontStyle.Regular, GraphicsUnit.Point);
             cmbJugadorDos.FormattingEnabled = true;
-            cmbJugadorDos.Location = new Point(452, 106);
+            cmbJugadorDos.Location = new Point(452, 104);
             cmbJugadorDos.MaxDropDownItems = 100;
             cmbJugadorDos.MaxLength = 50;
             cmbJugadorDos.Name = "cmbJugadorDos";
@@ -212,7 +212,7 @@
             btnCrearMesa.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             btnCrearMesa.BackColor = Color.FromArgb(24, 60, 53);
             btnCrearMesa.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnCrearMesa.Location = new Point(20, 139);
+            btnCrearMesa.Location = new Point(20, 137);
             btnCrearMesa.Name = "btnCrearMesa";
             btnCrearMesa.Size = new Size(223, 52);
             btnCrearMesa.TabIndex = 4;
@@ -226,7 +226,7 @@
             cmbJugadorUno.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbJugadorUno.Font = new Font("Segoe Print", 8F, FontStyle.Regular, GraphicsUnit.Point);
             cmbJugadorUno.FormattingEnabled = true;
-            cmbJugadorUno.Location = new Point(20, 106);
+            cmbJugadorUno.Location = new Point(20, 104);
             cmbJugadorUno.MaxDropDownItems = 100;
             cmbJugadorUno.MaxLength = 50;
             cmbJugadorUno.Name = "cmbJugadorUno";
@@ -240,7 +240,7 @@
             lblJugadorUno.AutoSize = true;
             lblJugadorUno.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblJugadorUno.ForeColor = Color.Snow;
-            lblJugadorUno.Location = new Point(53, 65);
+            lblJugadorUno.Location = new Point(60, 65);
             lblJugadorUno.Name = "lblJugadorUno";
             lblJugadorUno.Size = new Size(152, 36);
             lblJugadorUno.TabIndex = 2;
@@ -333,37 +333,50 @@
             // 
             // JugadorUno
             // 
-            JugadorUno.HeaderText = "Jugador Uno";
+            JugadorUno.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            JugadorUno.HeaderText = "Jugador Ganador";
             JugadorUno.Name = "JugadorUno";
             JugadorUno.ReadOnly = true;
+            JugadorUno.Resizable = DataGridViewTriState.False;
+            JugadorUno.SortMode = DataGridViewColumnSortMode.NotSortable;
+            JugadorUno.Width = 93;
             // 
             // JugadorDos
             // 
-            JugadorDos.HeaderText = "Jugador Dos";
+            JugadorDos.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            JugadorDos.HeaderText = "Jugador Perdedor";
             JugadorDos.Name = "JugadorDos";
             JugadorDos.ReadOnly = true;
+            JugadorDos.Width = 115;
             // 
             // Puntos
             // 
-            Puntos.HeaderText = "Puntos J1";
+            Puntos.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            Puntos.HeaderText = "Puntos Ganador";
             Puntos.Name = "Puntos";
             Puntos.ReadOnly = true;
+            Puntos.Width = 107;
             // 
             // Punto
             // 
-            Punto.HeaderText = "Puntos J2";
+            Punto.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            Punto.HeaderText = "Puntos Perdedor";
             Punto.Name = "Punto";
             Punto.ReadOnly = true;
+            Punto.Width = 110;
             // 
             // JugadorGanador
             // 
+            JugadorGanador.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             JugadorGanador.HeaderText = "Ganador";
             JugadorGanador.Name = "JugadorGanador";
             JugadorGanador.ReadOnly = true;
+            JugadorGanador.Width = 77;
             // 
             // FechaPartida
             // 
-            FechaPartida.HeaderText = "Fecha";
+            FechaPartida.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            FechaPartida.HeaderText = "Fecha de Juego";
             FechaPartida.Name = "FechaPartida";
             FechaPartida.ReadOnly = true;
             // 
@@ -386,7 +399,7 @@
             ClientSize = new Size(724, 571);
             Controls.Add(pnlBotones);
             Controls.Add(pnlContenedorDelTabControl);
-            MaximumSize = new Size(1030, 610);
+            MaximumSize = new Size(1100, 610);
             MinimumSize = new Size(740, 610);
             Name = "FormInicio";
             StartPosition = FormStartPosition.CenterScreen;
@@ -427,13 +440,13 @@
         private DataGridView dtgvRankingVictorias;
         private PictureBox pictureBox1;
         private DataGridView dtgvHistorialPartidas;
+        private Label lblHistorialDePartidas;
+        private Label lblRankingDeVictorias;
         private DataGridViewTextBoxColumn JugadorUno;
         private DataGridViewTextBoxColumn JugadorDos;
         private DataGridViewTextBoxColumn Puntos;
         private DataGridViewTextBoxColumn Punto;
         private DataGridViewTextBoxColumn JugadorGanador;
         private DataGridViewTextBoxColumn FechaPartida;
-        private Label lblHistorialDePartidas;
-        private Label lblRankingDeVictorias;
     }
 }

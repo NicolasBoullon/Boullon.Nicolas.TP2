@@ -10,28 +10,25 @@ namespace BibliotecaDeClases
 {
     public class Partida
     {
-        private string jugadorUno;
-        private string jugadorDos;
+        private string jugadorGanador;
+        private string jugadorPerdedor;
         private int cantidadPuntosJugadorUno;
         private int cantidadPuntosJugadorDos;
-        private string jugadorGanador;
         private DateTime horaJugada;
 
-        public Partida(string jugadorUno, string jugadorDos, int cantidadPuntosJugadorUno, int cantidadPuntosJugadorDos, string jugadorGanador, DateTime horaJugada)
+        public Partida(string jugadorGanador, string jugadorPerdedor, int cantidadPuntosJugadorUno, int cantidadPuntosJugadorDos, DateTime horaJugada)
         {
-            this.jugadorUno = jugadorUno;
-            this.jugadorDos = jugadorDos;
+            this.jugadorGanador = jugadorGanador;
+            this.jugadorPerdedor = jugadorPerdedor;
             this.cantidadPuntosJugadorUno = cantidadPuntosJugadorUno;
             this.cantidadPuntosJugadorDos = cantidadPuntosJugadorDos;
-            this.jugadorGanador = jugadorGanador;
             this.horaJugada = horaJugada;
         }
 
-        public string JugadorUno { get => jugadorUno; set => jugadorUno = value; }
-        public string JugadorDos { get => jugadorDos; set => jugadorDos = value; }
+        public string JugadorGanador { get => jugadorGanador; set => jugadorGanador = value; }
+        public string JugadorPerdedor { get => jugadorPerdedor; set => jugadorPerdedor = value; }
         public int CantidadPuntosJugadorUno { get => cantidadPuntosJugadorUno; set => cantidadPuntosJugadorUno = value; }
         public int CantidadPuntosJugadorDos { get => cantidadPuntosJugadorDos; set => cantidadPuntosJugadorDos = value; }
-        public string JugadorGanador { get => jugadorGanador; set => jugadorGanador = value; }
         public DateTime HoraJugada { get => horaJugada; set => horaJugada = value; }
 
 

@@ -13,77 +13,34 @@ namespace FrmDesign
 {
     public partial class FormPartida : Form
     {
+        bool banderaMesa = false;
         public Jugador j1;
         public Jugador j2;
         public CancellationToken cancellationToken;
         public CancellationTokenSource cancellationSource;
         List<Jugador> listJugadores;
+        List<Jugador> listJugadoresSql;
         public FormPartida(Jugador jug1, Jugador jug2)
         {
             InitializeComponent();
-            listJugadores = SerializadorJson<List<Jugador>>.DeserializarJsonJugador<List<Jugador>>("jugador.json");
-            j1 = listJugadores[0];
-            j2 = listJugadores[1];
+            //listJugadores = SerializadorJson<List<Jugador>>.DeserializarJsonJugador<List<Jugador>>("jugador.json");
+            j1 = JugadorDAO.BuscarJugadorPorNombre(jug1.NombreJugador);
+            j2 = JugadorDAO.BuscarJugadorPorNombre(jug2.NombreJugador);
+
             this.cancellationSource = new CancellationTokenSource();
             this.cancellationToken = this.cancellationSource.Token;
             gpbJugadorUno.Text = j1.NombreJugador;
             gpbJugadorDos.Text = j2.NombreJugador;
-           
-           
+
+
         }
 
         private async void FormPartida_Load(object sender, EventArgs e)
         {
 
-            //int puntosUno = 0;
-            //int puntosDos = 0;
-            //int puntosGanador = 0;
-            //int puntosPerdedor = 0;
-            //bool empate = false;
-            //Jugador j1 = new Jugador();
-            //Jugador j2 = new Jugador();
             JugarPartida(j1, j2);//iniciamiento de partideishon
 
             await Task.Delay(8000);
-            //string ganador = "";
-            //string perdedor = "";
-            //puntosUno = PuntosTotalesJugadorUno();
-            //puntosDos = PuntosTotalesJugadorDos();
-            //bool bandera = false;
-            //int puntosUno = 0;
-            //int puntosDos = 0;
-            //int puntosGanador = 0;
-            //int puntosPerdedor = 0;
-            //bool empate = false;
-            //string ganador = "";
-            //string perdedor = "";
-            //puntosUno = PuntosTotalesJugadorUno();
-            //puntosDos = PuntosTotalesJugadorDos();
-            //bool bandera = false;
-            //if (puntosUno > puntosDos)
-            //{
-            //    ganador = j1.NombreJugador;
-            //    perdedor = j2.NombreJugador;
-            //    puntosGanador = puntosUno;
-            //    puntosPerdedor = puntosDos;
-            //    bandera = true;
-            //}
-            //else if (puntosUno < puntosDos)
-            //{
-            //    ganador = j2.NombreJugador;
-            //    perdedor = j1.NombreJugador;
-            //    puntosGanador = puntosDos;
-            //    puntosPerdedor = puntosUno;
-            //    bandera = true;
-            //}
-            //else
-            //{
-            //    empate = true;
-            //    bandera = true;
-            //}
-
-            //Task.Run(() => { abrirFormGanador(ganador, perdedor, puntosGanador, puntosPerdedor, empate); });
-
 
         }
 
@@ -103,7 +60,7 @@ namespace FrmDesign
             {
                 if (cancellationToken.IsCancellationRequested)
                 {
-                    bandera=true;
+                    bandera = true;
                     break;
                 }
                 lstJ1.Items.Add(j1.Tiradas[i].MostrarTirada());
@@ -129,14 +86,14 @@ namespace FrmDesign
                 string perdedor = "";
                 puntosUno = PuntosTotalesJugadorUno();
                 puntosDos = PuntosTotalesJugadorDos();
-                bool banderaGanador = false;
+
                 if (puntosUno > puntosDos)
                 {
                     ganador = j1.NombreJugador;
                     perdedor = j2.NombreJugador;
                     puntosGanador = puntosUno;
                     puntosPerdedor = puntosDos;
-                    banderaGanador = true;
+
                     j1.CantidadDeVictorias++;
                     JugadorDAO.ActualizarVictoriasJugadorDAO(j1);
                 }
@@ -146,16 +103,16 @@ namespace FrmDesign
                     perdedor = j1.NombreJugador;
                     puntosGanador = puntosDos;
                     puntosPerdedor = puntosUno;
-                    banderaGanador = true;
+
                     j2.CantidadDeVictorias++;
                     JugadorDAO.ActualizarVictoriasJugadorDAO(j2);
                 }
                 else
                 {
                     empate = true;
-                    banderaGanador = true;
-                }
 
+                }
+                banderaMesa = true;
                 Task.Run(() => { abrirFormGanador(ganador, perdedor, puntosGanador, puntosPerdedor, empate); });
             }
 
@@ -548,36 +505,60 @@ namespace FrmDesign
         }
 
 
-        public int prueba(int[] tirada)
-        {
-            int cantidadDados = 0;
-            int resultado = 0;
-            int puntosTotales = 0;
-            foreach (int item in tirada)
-            {
-                for (int i = 0; i < 6; i++)
-                {
-                    if (ValidarEnabledJ1(tirada[i]))
-                    {
-                        foreach (int dado in tirada)
-                        {
-                            if (dado == tirada[i])
-                            {
-                                cantidadDados++;
-                            }
-                        }
-                        resultado = cantidadDados * tirada[i];
-                        return resultado;
-                    }
-                }
-            }
+        //public int prueba(int[] tirada)
+        //{
+        //    int cantidadDados = 0;
+        //    int resultado = 0;
+        //    int puntosTotales = 0;
+        //    foreach (int item in tirada)
+        //    {
+        //        for (int i = 0; i < 6; i++)
+        //        {
+        //            if (ValidarEnabledJ1(tirada[i]))
+        //            {
+        //                foreach (int dado in tirada)
+        //                {
+        //                    if (dado == tirada[i])
+        //                    {
+        //                        cantidadDados++;
+        //                    }
+        //                }
+        //                resultado = cantidadDados * tirada[i];
+        //                return resultado;
+        //            }
+        //        }
+        //    }
 
-            return 0;
-        }
+        //    return 0;
+        //}
 
         private void btnCancelarMesa_Click(object sender, EventArgs e)
         {
+            banderaMesa = true;
             cancellationSource.Cancel();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            if (banderaMesa)
+            {
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Todavia se esta jugando la partida. Si quiere salir debera pausar primero!");
+            }
+
+        }
+
+        private void FormPartida_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (!banderaMesa)
+            {
+                MessageBox.Show("Todavia se esta jugando la partida. Si quiere salir debera pausar primero!");
+                e.Cancel = true;
+            }
+
         }
     }
 }

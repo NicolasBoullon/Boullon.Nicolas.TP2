@@ -14,6 +14,7 @@ namespace FrmDesign
     public partial class FormInicio : Form
     {
         List<Jugador> listJugadores;
+        List<Partida> listPartida;
         public delegate void DelegadoMensaje(string mensaje);
         public FormInicio()
         {
@@ -35,16 +36,28 @@ namespace FrmDesign
         private void button2_Click(object sender, EventArgs e)//boton historial
         {
             tbcInferfazInicio.SelectTab(1);
-
+            SerializadorJson<List<Partida>> serial = new SerializadorJson<List<Partida>>();
+            listPartida = serial.DeserializarJson<List<Partida>>("partidas.json");
             dtgvRankingVictorias.DataSource = null;
             dtgvRankingVictorias.DataSource = JugadorDAO.TraerRankingDeVictorias();
+            dtgvHistorialPartidas.Rows.Clear();
+            foreach (Partida item in listPartida)
+            {
+                int rowIndex = dtgvHistorialPartidas.Rows.Add();
+                DataGridViewRow row = dtgvHistorialPartidas.Rows[rowIndex];
+                row.Cells[0].Value = item.JugadorGanador;
+                row.Cells[1].Value = item.JugadorPerdedor;
+                row.Cells[2].Value = item.CantidadPuntosJugadorUno;
+                row.Cells[3].Value = item.CantidadPuntosJugadorDos;
+                row.Cells[4].Value = item.JugadorGanador;
+                row.Cells[5].Value = item.HoraJugada;
+            }
         }
 
         private void btnCrearMesa_Click(object sender, EventArgs e)
         {
             string cmbJug1 = cmbJugadorUno.Text;
             string cmbJug2 = cmbJugadorDos.Text;
-            List<Jugador> jugAux = new List<Jugador>();
 
             Jugador j1 = new Jugador();
             Jugador j2 = new Jugador();
@@ -68,9 +81,7 @@ namespace FrmDesign
                     j2 = jug;
                 }
             }
-            jugAux.Add(j1);
-            jugAux.Add(j2);
-            SerializadorJson<List<Jugador>>.SerializarJsonJugador("jugador.json", jugAux);
+
             FormPartida frm = new FormPartida(j1, j2);
             Task.Run(() => { frm.ShowDialog(); });
         }

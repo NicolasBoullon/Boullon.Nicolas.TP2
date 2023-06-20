@@ -79,8 +79,6 @@
             btnCancelarMesa = new Button();
             btnSalir = new Button();
             lblCalculandoPuntos = new Label();
-            lblPuntosJ1 = new Label();
-            lblPuntosJ2 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             gpbJugadorUno.SuspendLayout();
             gpbTiradasJ1.SuspendLayout();
@@ -634,6 +632,7 @@
             btnSalir.TabIndex = 7;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
             // 
             // lblCalculandoPuntos
             // 
@@ -646,36 +645,12 @@
             lblCalculandoPuntos.TabIndex = 11;
             lblCalculandoPuntos.Text = "Calculando Puntaje...";
             // 
-            // lblPuntosJ1
-            // 
-            lblPuntosJ1.AutoSize = true;
-            lblPuntosJ1.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPuntosJ1.ForeColor = Color.Snow;
-            lblPuntosJ1.Location = new Point(12, 477);
-            lblPuntosJ1.Name = "lblPuntosJ1";
-            lblPuntosJ1.Size = new Size(94, 36);
-            lblPuntosJ1.TabIndex = 12;
-            lblPuntosJ1.Text = "Puntos:";
-            // 
-            // lblPuntosJ2
-            // 
-            lblPuntosJ2.AutoSize = true;
-            lblPuntosJ2.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPuntosJ2.ForeColor = Color.Snow;
-            lblPuntosJ2.Location = new Point(533, 433);
-            lblPuntosJ2.Name = "lblPuntosJ2";
-            lblPuntosJ2.Size = new Size(94, 36);
-            lblPuntosJ2.TabIndex = 13;
-            lblPuntosJ2.Text = "Puntos:";
-            // 
             // FormPartida
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 51, 53);
             ClientSize = new Size(844, 528);
-            Controls.Add(lblPuntosJ2);
-            Controls.Add(lblPuntosJ1);
             Controls.Add(lblCalculandoPuntos);
             Controls.Add(btnSalir);
             Controls.Add(btnCancelarMesa);
@@ -686,6 +661,7 @@
             Name = "FormPartida";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "A jugar!";
+            FormClosing += FormPartida_FormClosing;
             Load += FormPartida_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             gpbJugadorUno.ResumeLayout(false);
@@ -750,7 +726,5 @@
         public Label lblJ2Modificar2;
         public Label lblJ2Modificar1;
         private Label lblCalculandoPuntos;
-        private Label lblPuntosJ1;
-        private Label lblPuntosJ2;
     }
 }
