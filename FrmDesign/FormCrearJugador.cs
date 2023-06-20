@@ -32,6 +32,11 @@ namespace FrmDesign
         private void btnAceptarCrearJugador_Click(object sender, EventArgs e)
         {
             string nombreJugador = txtCrearJugador.Text;
+            if (nombreJugador == "")
+            {
+                MessageBox.Show("Debe ingresar un nombre de Jugador.");
+                return;
+            }
             if (!VerificarJugador(nombreJugador))
             {
                 JugadorDAO.CrearJugador(nombreJugador);
@@ -39,7 +44,7 @@ namespace FrmDesign
             }
             else
             {
-                MessageBox.Show("Jugador ya existente. Ingrese otro nombre");
+                MessageBox.Show("Jugador ya existente. Por favor ingrese otro nombre.");
             }
         }
 
@@ -54,6 +59,11 @@ namespace FrmDesign
                 }
             }
             return false;
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

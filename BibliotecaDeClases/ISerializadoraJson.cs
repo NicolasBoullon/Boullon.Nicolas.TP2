@@ -13,6 +13,5 @@ namespace BibliotecaDeClases
 
         public void SerializarJson<T>(string ruta, T objeto);
        
-
     }
 }

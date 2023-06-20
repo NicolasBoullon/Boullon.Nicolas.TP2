@@ -14,10 +14,12 @@ namespace FrmDesign
     public partial class FormLogin : Form
     {
         List<Usuario> listUsuarios;
-
+        public delegate void DelegadoMensaje(string mensaje);
+        DelegadoMensaje alerta;
         public FormLogin()
         {
             InitializeComponent();
+            alerta = MensajeError;
         }
 
         private void FormLogin_Load(object sender, EventArgs e)
@@ -32,27 +34,29 @@ namespace FrmDesign
 
             if (user == "" || pass == "")
             {
-                MessageBox.Show("Debe rellenar los datos correspondientes!");
+                alerta("Debe rellenar los datos correspondientes!");
                 return;
             }
 
             if (!Usuario.VerificarUsuarioExistente(user, pass))
             {
-                MessageBox.Show("No hay ningun usuario con esos datos!");
+                alerta("No hay ningun usuario con esos datos!");
                 txtPassLogin.Clear();
                 return;
             }
 
-            if (Usuario.ConseguirUsuario(user, pass) is not null)
-            {
 
-            }
             FormInicio frmInicio = new FormInicio();
             this.Hide();
             frmInicio.ShowDialog();
             this.Close();
         }
 
+
+        public void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje);
+        }
         private void btnAutocompletadoLogin_Click(object sender, EventArgs e)
         {
             txtUserLogin.Text = "Nicolas Boullon";
@@ -63,7 +67,7 @@ namespace FrmDesign
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
             {
-                MessageBox.Show("Solo Ingresar Letras");
+                alerta("Solo Ingresar Letras");
                 e.Handled = true;
             }
         }
@@ -72,7 +76,7 @@ namespace FrmDesign
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                MessageBox.Show("Solo Ingresar Letras y Numeros. Sin espacios");
+                alerta("Solo Ingresar Letras y Numeros. Sin espacios");
                 e.Handled = true;
             }
         }
@@ -81,7 +85,7 @@ namespace FrmDesign
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
             {
-                MessageBox.Show("Solo Ingresar Letras");
+                alerta("Solo Ingresar Letras");
                 e.Handled = true;
             }
         }
@@ -90,7 +94,7 @@ namespace FrmDesign
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && e.KeyChar != ' ')
             {
-                MessageBox.Show("Solo Ingresar Letras");
+                alerta("Solo Ingresar Letras");
                 e.Handled = true;
             }
         }
@@ -99,7 +103,7 @@ namespace FrmDesign
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                MessageBox.Show("Solo Ingresar Letras y Numeros. Sin espacios");
+                alerta("Solo Ingresar Letras y Numeros. Sin espacios");
                 e.Handled = true;
             }
         }
@@ -108,7 +112,7 @@ namespace FrmDesign
         {
             if (!char.IsLetter(e.KeyChar) && !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
             {
-                MessageBox.Show("Solo Ingresar Letras y Numeros. Sin espacios");
+                alerta("Solo Ingresar Letras y Numeros. Sin espacios");
                 e.Handled = true;
             }
         }
@@ -119,22 +123,29 @@ namespace FrmDesign
             string nombreUsuarioCrear = txtUserCrear.Text;
             string contraUsuarioCrear = txtPassCrear.Text;
             string contraConfirmarUsuarioCrear = txtPassConfirmarCrear.Text;
-            if (!VerificarUsuario(nombreUsuarioCrear))
+            if (VerificarDatos(nombreCompletoUser, nombreUsuarioCrear, contraUsuarioCrear, contraConfirmarUsuarioCrear))
             {
-                if (contraUsuarioCrear == contraConfirmarUsuarioCrear)
+                if (!VerificarUsuario(nombreUsuarioCrear))
                 {
-                    UsuarioDAO.CrearUsuario(nombreCompletoUser, nombreUsuarioCrear, contraUsuarioCrear);
+                    if (contraUsuarioCrear == contraConfirmarUsuarioCrear)
+                    {
+                        UsuarioDAO.CrearUsuario(nombreCompletoUser, nombreUsuarioCrear, contraUsuarioCrear);
+                        alerta("Usuario creado con exito!");
+                    }
+                    else
+                    {
+                        alerta("Las contraseñas no coinciden!");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Las contraseñas no coinciden!");
+                    alerta("Nombre de Usuario en uso. Ingrese otro nombre de usuario.");
                 }
             }
             else
             {
-                MessageBox.Show("Nombre de Usuario en uso. Ingrese otro nombre de usuario.");
+                alerta("Debe llenar todos los campos primero");
             }
-
         }
 
         private bool VerificarUsuario(string nombreUsuarioCrear)
@@ -148,6 +159,16 @@ namespace FrmDesign
                 }
             }
 
+            return false;
+        }
+
+        private bool VerificarDatos(string nombreCompleto, string nombreUsuario, string pass, string passConfimar)
+        {
+            if (nombreCompleto is not null && nombreCompleto != "" && nombreUsuario is not null && nombreUsuario != "" &&
+                pass is not null && pass != "" && passConfimar is not null && passConfimar != "")
+            {
+                return true;
+            }
             return false;
         }
     }

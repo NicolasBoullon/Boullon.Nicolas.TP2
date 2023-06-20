@@ -26,7 +26,7 @@ namespace FrmDesign
 
         public void MensajeError(string mensaje)
         {
-            Console.WriteLine(mensaje);
+            MessageBox.Show(mensaje);
         }
         private void btnMenuPartidas_Click(object sender, EventArgs e)
         {
@@ -61,10 +61,10 @@ namespace FrmDesign
 
             Jugador j1 = new Jugador();
             Jugador j2 = new Jugador();
+            DelegadoMensaje mensajeError = MensajeError;
 
             if (cmbJug1 == "" || cmbJug2 == "")
             {
-                DelegadoMensaje mensajeError = MensajeError;
                 mensajeError("Debe elegir los jugadores primero!");
                 return;
             }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             pnlLoginUser = new Panel();
             gpbSignIn = new GroupBox();
             txtPassConfirmarCrear = new TextBox();
@@ -95,6 +96,7 @@
             txtPassConfirmarCrear.Name = "txtPassConfirmarCrear";
             txtPassConfirmarCrear.Size = new Size(175, 27);
             txtPassConfirmarCrear.TabIndex = 22;
+            txtPassConfirmarCrear.UseSystemPasswordChar = true;
             txtPassConfirmarCrear.KeyPress += txtPassConfirmarCrear_KeyPress;
             // 
             // lblConfirmarContra
@@ -152,6 +154,7 @@
             txtPassCrear.Name = "txtPassCrear";
             txtPassCrear.Size = new Size(175, 27);
             txtPassCrear.TabIndex = 18;
+            txtPassCrear.UseSystemPasswordChar = true;
             txtPassCrear.KeyPress += txtPassCrear_KeyPress;
             // 
             // lblNombreDeUsuarioCrear
@@ -306,10 +309,11 @@
             ClientSize = new Size(1196, 515);
             Controls.Add(pnlImagenDados);
             Controls.Add(pnlLoginUser);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(1212, 554);
             Name = "FormLogin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormLogin";
+            Text = "Generala Timba";
             Load += FormLogin_Load;
             pnlLoginUser.ResumeLayout(false);
             pnlLoginUser.PerformLayout();

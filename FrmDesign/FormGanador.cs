@@ -13,6 +13,7 @@ namespace FrmDesign
 {
     public partial class FormGanador : Form 
     {
+        public delegate void MostrarGanador(string ganador, string perdedor, int puntosGanador, int puntosPerdedor, bool empate);
         List<Jugador> listJugador;
         List<Partida> listPartida = new List<Partida>();
         private string gan;
@@ -34,7 +35,8 @@ namespace FrmDesign
 
         private void FormGanador_Load(object sender, EventArgs e)
         {
-            mostrarResultados(gan, per, pGan, pPerd, emp);
+            MostrarGanador informarResultados = mostrarResultados;
+            informarResultados(gan, per, pGan, pPerd, emp);
             SerializadorJson<List<Partida>> serial = new SerializadorJson<List<Partida>>();
             Partida partida = new Partida(gan, per, pGan, pPerd, DateTime.Now);
             if (!File.Exists("partidas.json"))
@@ -53,8 +55,16 @@ namespace FrmDesign
 
         private void mostrarResultados(string ganador, string perdedor, int puntosGanador, int puntosPerdedor, bool empate)
         {
-            lblGanador.Text = $"Ganador: {ganador}  Puntos: {puntosGanador}";
-            lblPerdedor.Text = $"Perdedor: {perdedor}  Puntos: {puntosPerdedor}";
+            if (!empate)
+            {
+                lblGanador.Text = $"Ganador: {ganador}  Puntos: {puntosGanador}";
+                lblPerdedor.Text = $"Perdedor: {perdedor}  Puntos: {puntosPerdedor}";
+            }
+            else
+            {
+                lblGanador.Text = $"PARTIDA EMPATADA - Puntos: {puntosGanador}";
+                lblPerdedor.Text = $"PARTIDA EMPATADA - Puntos: {puntosPerdedor}";
+            }
         }
     }
 }

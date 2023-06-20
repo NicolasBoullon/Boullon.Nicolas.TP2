@@ -81,6 +81,7 @@
             btnSalir.TabIndex = 8;
             btnSalir.Text = "Salir";
             btnSalir.UseVisualStyleBackColor = false;
+            btnSalir.Click += btnSalir_Click;
             // 
             // btnAceptarCrearJugador
             // 

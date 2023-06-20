@@ -171,7 +171,7 @@
             // 
             // btnCrearJugador
             // 
-            btnCrearJugador.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnCrearJugador.Anchor = AnchorStyles.None;
             btnCrearJugador.BackColor = Color.FromArgb(24, 60, 53);
             btnCrearJugador.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnCrearJugador.Location = new Point(452, 137);
@@ -184,7 +184,7 @@
             // 
             // lblJugadorDos
             // 
-            lblJugadorDos.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            lblJugadorDos.Anchor = AnchorStyles.None;
             lblJugadorDos.AutoSize = true;
             lblJugadorDos.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblJugadorDos.ForeColor = Color.Snow;
@@ -196,7 +196,7 @@
             // 
             // cmbJugadorDos
             // 
-            cmbJugadorDos.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            cmbJugadorDos.Anchor = AnchorStyles.None;
             cmbJugadorDos.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbJugadorDos.Font = new Font("Segoe Print", 8F, FontStyle.Regular, GraphicsUnit.Point);
             cmbJugadorDos.FormattingEnabled = true;
@@ -209,7 +209,7 @@
             // 
             // btnCrearMesa
             // 
-            btnCrearMesa.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            btnCrearMesa.Anchor = AnchorStyles.None;
             btnCrearMesa.BackColor = Color.FromArgb(24, 60, 53);
             btnCrearMesa.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             btnCrearMesa.Location = new Point(20, 137);
@@ -222,7 +222,7 @@
             // 
             // cmbJugadorUno
             // 
-            cmbJugadorUno.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            cmbJugadorUno.Anchor = AnchorStyles.None;
             cmbJugadorUno.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbJugadorUno.Font = new Font("Segoe Print", 8F, FontStyle.Regular, GraphicsUnit.Point);
             cmbJugadorUno.FormattingEnabled = true;
@@ -236,7 +236,7 @@
             // 
             // lblJugadorUno
             // 
-            lblJugadorUno.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            lblJugadorUno.Anchor = AnchorStyles.None;
             lblJugadorUno.AutoSize = true;
             lblJugadorUno.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblJugadorUno.ForeColor = Color.Snow;
@@ -248,7 +248,7 @@
             // 
             // pcbMisterDados
             // 
-            pcbMisterDados.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            pcbMisterDados.Anchor = AnchorStyles.None;
             pcbMisterDados.Image = (Image)resources.GetObject("pcbMisterDados.Image");
             pcbMisterDados.Location = new Point(30, 65);
             pcbMisterDados.Name = "pcbMisterDados";
@@ -300,7 +300,7 @@
             dtgvRankingVictorias.AllowUserToDeleteRows = false;
             dtgvRankingVictorias.AllowUserToResizeColumns = false;
             dtgvRankingVictorias.AllowUserToResizeRows = false;
-            dtgvRankingVictorias.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            dtgvRankingVictorias.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left;
             dtgvRankingVictorias.BackgroundColor = Color.FromArgb(24, 51, 53);
             dtgvRankingVictorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvRankingVictorias.GridColor = SystemColors.ControlDarkDark;
@@ -319,7 +319,7 @@
             dtgvHistorialPartidas.AllowUserToDeleteRows = false;
             dtgvHistorialPartidas.AllowUserToResizeColumns = false;
             dtgvHistorialPartidas.AllowUserToResizeRows = false;
-            dtgvHistorialPartidas.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dtgvHistorialPartidas.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dtgvHistorialPartidas.BackgroundColor = Color.FromArgb(24, 51, 53);
             dtgvHistorialPartidas.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dtgvHistorialPartidas.Columns.AddRange(new DataGridViewColumn[] { JugadorUno, JugadorDos, Puntos, Punto, JugadorGanador, FechaPartida });
@@ -399,11 +399,11 @@
             ClientSize = new Size(724, 571);
             Controls.Add(pnlBotones);
             Controls.Add(pnlContenedorDelTabControl);
-            MaximumSize = new Size(1100, 610);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MinimumSize = new Size(740, 610);
             Name = "FormInicio";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormInicio";
+            Text = "Inicio";
             pnlBotones.ResumeLayout(false);
             pnlContenedorDelTabControl.ResumeLayout(false);
             tbcInferfazInicio.ResumeLayout(false);

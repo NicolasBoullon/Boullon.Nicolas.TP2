@@ -90,7 +90,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom;
             pictureBox1.Image = Properties.Resources.porno_de_viejas_cachondas;
-            pictureBox1.Location = new Point(325, -30);
+            pictureBox1.Location = new Point(357, -30);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(189, 546);
             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
@@ -124,7 +124,7 @@
             gpbJugadorUno.ForeColor = Color.Snow;
             gpbJugadorUno.Location = new Point(12, 12);
             gpbJugadorUno.Name = "gpbJugadorUno";
-            gpbJugadorUno.Size = new Size(307, 418);
+            gpbJugadorUno.Size = new Size(339, 418);
             gpbJugadorUno.TabIndex = 1;
             gpbJugadorUno.TabStop = false;
             gpbJugadorUno.Text = "Jugador Uno: ";
@@ -133,7 +133,7 @@
             // 
             lblJ1ModificarGenerala.AutoSize = true;
             lblJ1ModificarGenerala.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ1ModificarGenerala.Location = new Point(152, 376);
+            lblJ1ModificarGenerala.Location = new Point(174, 376);
             lblJ1ModificarGenerala.Name = "lblJ1ModificarGenerala";
             lblJ1ModificarGenerala.Size = new Size(25, 30);
             lblJ1ModificarGenerala.TabIndex = 21;
@@ -143,7 +143,7 @@
             // 
             lblJ1ModificarPoker.AutoSize = true;
             lblJ1ModificarPoker.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ1ModificarPoker.Location = new Point(152, 337);
+            lblJ1ModificarPoker.Location = new Point(174, 337);
             lblJ1ModificarPoker.Name = "lblJ1ModificarPoker";
             lblJ1ModificarPoker.Size = new Size(25, 30);
             lblJ1ModificarPoker.TabIndex = 20;
@@ -153,7 +153,7 @@
             // 
             lblJ1ModificarFull.AutoSize = true;
             lblJ1ModificarFull.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ1ModificarFull.Location = new Point(152, 296);
+            lblJ1ModificarFull.Location = new Point(174, 296);
             lblJ1ModificarFull.Name = "lblJ1ModificarFull";
             lblJ1ModificarFull.Size = new Size(25, 30);
             lblJ1ModificarFull.TabIndex = 19;
@@ -163,7 +163,7 @@
             // 
             lblJ1ModificarEsc.AutoSize = true;
             lblJ1ModificarEsc.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ1ModificarEsc.Location = new Point(152, 255);
+            lblJ1ModificarEsc.Location = new Point(174, 255);
             lblJ1ModificarEsc.Name = "lblJ1ModificarEsc";
             lblJ1ModificarEsc.Size = new Size(25, 30);
             lblJ1ModificarEsc.TabIndex = 18;
@@ -173,7 +173,7 @@
             // 
             lblJ1Modificar6.AutoSize = true;
             lblJ1Modificar6.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ1Modificar6.Location = new Point(152, 219);
+            lblJ1Modificar6.Location = new Point(174, 219);
             lblJ1Modificar6.Name = "lblJ1Modificar6";
             lblJ1Modificar6.Size = new Size(25, 30);
             lblJ1Modificar6.TabIndex = 17;
@@ -183,7 +183,7 @@
             // 
             lblJ1Modificar5.AutoSize = true;
             lblJ1Modificar5.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ1Modificar5.Location = new Point(152, 182);
+            lblJ1Modificar5.Location = new Point(174, 182);
             lblJ1Modificar5.Name = "lblJ1Modificar5";
             lblJ1Modificar5.Size = new Size(25, 30);
             lblJ1Modificar5.TabIndex = 16;
@@ -193,7 +193,7 @@
             // 
             lblJ1Modificar4.AutoSize = true;
             lblJ1Modificar4.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ1Modificar4.Location = new Point(152, 146);
+            lblJ1Modificar4.Location = new Point(174, 146);
             lblJ1Modificar4.Name = "lblJ1Modificar4";
             lblJ1Modificar4.Size = new Size(25, 30);
             lblJ1Modificar4.TabIndex = 15;
@@ -203,7 +203,7 @@
             // 
             lblJ1Modificar3.AutoSize = true;
             lblJ1Modificar3.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ1Modificar3.Location = new Point(152, 110);
+            lblJ1Modificar3.Location = new Point(174, 110);
             lblJ1Modificar3.Name = "lblJ1Modificar3";
             lblJ1Modificar3.Size = new Size(25, 30);
             lblJ1Modificar3.TabIndex = 14;
@@ -213,7 +213,7 @@
             // 
             lblJ1Modificar2.AutoSize = true;
             lblJ1Modificar2.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ1Modificar2.Location = new Point(152, 74);
+            lblJ1Modificar2.Location = new Point(174, 74);
             lblJ1Modificar2.Name = "lblJ1Modificar2";
             lblJ1Modificar2.Size = new Size(25, 30);
             lblJ1Modificar2.TabIndex = 13;
@@ -223,7 +223,7 @@
             // 
             lblJ1Modificar1.AutoSize = true;
             lblJ1Modificar1.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ1Modificar1.Location = new Point(152, 38);
+            lblJ1Modificar1.Location = new Point(174, 38);
             lblJ1Modificar1.Name = "lblJ1Modificar1";
             lblJ1Modificar1.Size = new Size(25, 30);
             lblJ1Modificar1.TabIndex = 12;
@@ -233,7 +233,7 @@
             // 
             gpbTiradasJ1.Controls.Add(lstJ1);
             gpbTiradasJ1.ForeColor = Color.Snow;
-            gpbTiradasJ1.Location = new Point(190, 23);
+            gpbTiradasJ1.Location = new Point(222, 44);
             gpbTiradasJ1.Name = "gpbTiradasJ1";
             gpbTiradasJ1.Size = new Size(111, 303);
             gpbTiradasJ1.TabIndex = 11;
@@ -377,9 +377,9 @@
             gpbJugadorDos.Controls.Add(lblJ2Al6);
             gpbJugadorDos.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             gpbJugadorDos.ForeColor = Color.Snow;
-            gpbJugadorDos.Location = new Point(520, 12);
+            gpbJugadorDos.Location = new Point(552, 12);
             gpbJugadorDos.Name = "gpbJugadorDos";
-            gpbJugadorDos.Size = new Size(312, 418);
+            gpbJugadorDos.Size = new Size(344, 418);
             gpbJugadorDos.TabIndex = 2;
             gpbJugadorDos.TabStop = false;
             gpbJugadorDos.Text = "Jugador Dos: ";
@@ -388,7 +388,7 @@
             // 
             gpbTiradasJ2.Controls.Add(lstJ2);
             gpbTiradasJ2.ForeColor = Color.Snow;
-            gpbTiradasJ2.Location = new Point(195, 23);
+            gpbTiradasJ2.Location = new Point(227, 44);
             gpbTiradasJ2.Name = "gpbTiradasJ2";
             gpbTiradasJ2.Size = new Size(111, 303);
             gpbTiradasJ2.TabIndex = 12;
@@ -410,7 +410,7 @@
             // 
             lblJ2ModificarGenerala.AutoSize = true;
             lblJ2ModificarGenerala.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ2ModificarGenerala.Location = new Point(163, 376);
+            lblJ2ModificarGenerala.Location = new Point(186, 376);
             lblJ2ModificarGenerala.Name = "lblJ2ModificarGenerala";
             lblJ2ModificarGenerala.Size = new Size(25, 30);
             lblJ2ModificarGenerala.TabIndex = 32;
@@ -420,7 +420,7 @@
             // 
             lblJ2ModificarPoker.AutoSize = true;
             lblJ2ModificarPoker.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ2ModificarPoker.Location = new Point(162, 337);
+            lblJ2ModificarPoker.Location = new Point(185, 337);
             lblJ2ModificarPoker.Name = "lblJ2ModificarPoker";
             lblJ2ModificarPoker.Size = new Size(25, 30);
             lblJ2ModificarPoker.TabIndex = 31;
@@ -440,7 +440,7 @@
             // 
             lblJ2ModificarFull.AutoSize = true;
             lblJ2ModificarFull.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ2ModificarFull.Location = new Point(162, 296);
+            lblJ2ModificarFull.Location = new Point(185, 296);
             lblJ2ModificarFull.Name = "lblJ2ModificarFull";
             lblJ2ModificarFull.Size = new Size(25, 30);
             lblJ2ModificarFull.TabIndex = 30;
@@ -460,7 +460,7 @@
             // 
             lblJ2ModificarEsc.AutoSize = true;
             lblJ2ModificarEsc.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ2ModificarEsc.Location = new Point(162, 255);
+            lblJ2ModificarEsc.Location = new Point(185, 255);
             lblJ2ModificarEsc.Name = "lblJ2ModificarEsc";
             lblJ2ModificarEsc.Size = new Size(25, 30);
             lblJ2ModificarEsc.TabIndex = 29;
@@ -480,7 +480,7 @@
             // 
             lblJ2Modificar6.AutoSize = true;
             lblJ2Modificar6.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ2Modificar6.Location = new Point(162, 219);
+            lblJ2Modificar6.Location = new Point(185, 219);
             lblJ2Modificar6.Name = "lblJ2Modificar6";
             lblJ2Modificar6.Size = new Size(25, 30);
             lblJ2Modificar6.TabIndex = 28;
@@ -490,7 +490,7 @@
             // 
             lblJ2Modificar5.AutoSize = true;
             lblJ2Modificar5.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ2Modificar5.Location = new Point(162, 182);
+            lblJ2Modificar5.Location = new Point(185, 182);
             lblJ2Modificar5.Name = "lblJ2Modificar5";
             lblJ2Modificar5.Size = new Size(25, 30);
             lblJ2Modificar5.TabIndex = 27;
@@ -510,7 +510,7 @@
             // 
             lblJ2Modificar4.AutoSize = true;
             lblJ2Modificar4.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ2Modificar4.Location = new Point(162, 146);
+            lblJ2Modificar4.Location = new Point(185, 146);
             lblJ2Modificar4.Name = "lblJ2Modificar4";
             lblJ2Modificar4.Size = new Size(25, 30);
             lblJ2Modificar4.TabIndex = 26;
@@ -530,7 +530,7 @@
             // 
             lblJ2Modificar3.AutoSize = true;
             lblJ2Modificar3.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ2Modificar3.Location = new Point(162, 110);
+            lblJ2Modificar3.Location = new Point(185, 110);
             lblJ2Modificar3.Name = "lblJ2Modificar3";
             lblJ2Modificar3.Size = new Size(25, 30);
             lblJ2Modificar3.TabIndex = 25;
@@ -550,7 +550,7 @@
             // 
             lblJ2Modificar2.AutoSize = true;
             lblJ2Modificar2.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ2Modificar2.Location = new Point(162, 74);
+            lblJ2Modificar2.Location = new Point(185, 74);
             lblJ2Modificar2.Name = "lblJ2Modificar2";
             lblJ2Modificar2.Size = new Size(25, 30);
             lblJ2Modificar2.TabIndex = 24;
@@ -570,7 +570,7 @@
             // 
             lblJ2Modificar1.AutoSize = true;
             lblJ2Modificar1.Font = new Font("Segoe Print", 12.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblJ2Modificar1.Location = new Point(162, 38);
+            lblJ2Modificar1.Location = new Point(185, 38);
             lblJ2Modificar1.Name = "lblJ2Modificar1";
             lblJ2Modificar1.Size = new Size(25, 30);
             lblJ2Modificar1.TabIndex = 23;
@@ -612,7 +612,7 @@
             btnCancelarMesa.BackColor = Color.FromArgb(24, 60, 53);
             btnCancelarMesa.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnCancelarMesa.ForeColor = Color.Snow;
-            btnCancelarMesa.Location = new Point(325, 481);
+            btnCancelarMesa.Location = new Point(357, 481);
             btnCancelarMesa.Name = "btnCancelarMesa";
             btnCancelarMesa.Size = new Size(189, 35);
             btnCancelarMesa.TabIndex = 6;
@@ -626,7 +626,7 @@
             btnSalir.BackColor = Color.FromArgb(24, 60, 53);
             btnSalir.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btnSalir.ForeColor = Color.Snow;
-            btnSalir.Location = new Point(643, 478);
+            btnSalir.Location = new Point(707, 478);
             btnSalir.Name = "btnSalir";
             btnSalir.Size = new Size(189, 38);
             btnSalir.TabIndex = 7;
@@ -636,10 +636,11 @@
             // 
             // lblCalculandoPuntos
             // 
+            lblCalculandoPuntos.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             lblCalculandoPuntos.AutoSize = true;
             lblCalculandoPuntos.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblCalculandoPuntos.ForeColor = Color.Snow;
-            lblCalculandoPuntos.Location = new Point(12, 433);
+            lblCalculandoPuntos.Location = new Point(12, 477);
             lblCalculandoPuntos.Name = "lblCalculandoPuntos";
             lblCalculandoPuntos.Size = new Size(235, 36);
             lblCalculandoPuntos.TabIndex = 11;
@@ -650,7 +651,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(24, 51, 53);
-            ClientSize = new Size(844, 528);
+            ClientSize = new Size(908, 528);
             Controls.Add(lblCalculandoPuntos);
             Controls.Add(btnSalir);
             Controls.Add(btnCancelarMesa);
@@ -658,6 +659,7 @@
             Controls.Add(gpbJugadorDos);
             Controls.Add(pictureBox1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            MinimumSize = new Size(924, 567);
             Name = "FormPartida";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "A jugar!";

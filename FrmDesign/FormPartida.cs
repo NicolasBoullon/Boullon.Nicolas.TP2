@@ -18,8 +18,7 @@ namespace FrmDesign
         public Jugador j2;
         public CancellationToken cancellationToken;
         public CancellationTokenSource cancellationSource;
-        List<Jugador> listJugadores;
-        List<Jugador> listJugadoresSql;
+
         public FormPartida(Jugador jug1, Jugador jug2)
         {
             InitializeComponent();
@@ -82,8 +81,8 @@ namespace FrmDesign
                 int puntosGanador = 0;
                 int puntosPerdedor = 0;
                 bool empate = false;
-                string ganador = "";
-                string perdedor = "";
+                string ganador = "empate";
+                string perdedor = "empate";
                 puntosUno = PuntosTotalesJugadorUno();
                 puntosDos = PuntosTotalesJugadorDos();
 
@@ -93,7 +92,8 @@ namespace FrmDesign
                     perdedor = j2.NombreJugador;
                     puntosGanador = puntosUno;
                     puntosPerdedor = puntosDos;
-
+                    await Task.Delay(new Random().Next(0, 500));
+                    j1 = JugadorDAO.BuscarJugadorPorNombre(j1.NombreJugador);
                     j1.CantidadDeVictorias++;
                     JugadorDAO.ActualizarVictoriasJugadorDAO(j1);
                 }
@@ -104,13 +104,15 @@ namespace FrmDesign
                     puntosGanador = puntosDos;
                     puntosPerdedor = puntosUno;
 
+                    j2 = JugadorDAO.BuscarJugadorPorNombre(j2.NombreJugador);
                     j2.CantidadDeVictorias++;
                     JugadorDAO.ActualizarVictoriasJugadorDAO(j2);
                 }
                 else
                 {
                     empate = true;
-
+                    puntosGanador = puntosUno;
+                    puntosPerdedor = puntosDos;
                 }
                 banderaMesa = true;
                 Task.Run(() => { abrirFormGanador(ganador, perdedor, puntosGanador, puntosPerdedor, empate); });

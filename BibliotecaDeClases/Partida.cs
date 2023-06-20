@@ -154,42 +154,11 @@ namespace BibliotecaDeClases
                     bandera = 1;
                 }
             }
-                if (valorYCant[1] == 1)
-                {
-                    valorYCant[0] = 9;
-                    valorYCant[1] = 9;
-                }
-            return valorYCant;
-        }
-
-        public static int[] ContarMismoMaximoDado(int[] tirada)//{1,1,1,3,3}
-        {
-            int numeroVecesRepetido = 0;
-            int MayorVecesRepetido = 0;
-            int[] valorYCant = new int[2];
-            int bandera = 0;
-            int valorDado = 0;
-            //int[] repetidos = new int[tirada.Length];
-            for (int i = 7; i > 0; i--)//Representa las caras de los dados
-            {
-                numeroVecesRepetido = 0;
-                for (int j = 0; j < tirada.Length; j++)
-                {
-                    if (tirada[j] == i)
-                    {
-                        numeroVecesRepetido++;
-                        valorDado = tirada[j];
-                    }
-                }
-
-                if (bandera == 0 || numeroVecesRepetido > MayorVecesRepetido)
-                {
-                    MayorVecesRepetido = numeroVecesRepetido;
-                    valorYCant[0] = valorDado;
-                    valorYCant[1] = numeroVecesRepetido;
-                    bandera = 1;
-                }
-            }
+                //if (valorYCant[1] == 1)
+                //{
+                //    valorYCant[0] = 9;
+                //    valorYCant[1] = 9;
+                //}
             return valorYCant;
         }
 
