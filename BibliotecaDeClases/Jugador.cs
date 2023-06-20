@@ -68,28 +68,5 @@ namespace BibliotecaDeClases
             return sb.ToString();
         }
 
-        private static bool VerificarJugadores(Jugador j1, Jugador j2)
-        {
-            List<Jugador> listJugador = JugadorDAO.GetJugadores();
-            bool jugadorUno = false;
-            bool jugadorDos = false;
-            foreach (Jugador jug in listJugador)
-            {
-                if (jug == j1)
-                {
-                    jugadorUno = true;
-                }
-                if (jug == j2)
-                {
-                    jugadorDos = true;
-                }
-            }
-            if (jugadorUno && jugadorDos)
-            {
-                return true;
-            }
-            return false;
-        }
-
     }
 }

@@ -154,47 +154,8 @@ namespace BibliotecaDeClases
                     bandera = 1;
                 }
             }
-                //if (valorYCant[1] == 1)
-                //{
-                //    valorYCant[0] = 9;
-                //    valorYCant[1] = 9;
-                //}
             return valorYCant;
         }
 
-        
-        //public static int[] MayorDadoRepetido(int[] tirada) //{1,1,1,3,3}
-        //{
-        //    int bandera = 0;
-        //    int[] MayorVecesRepetido = new int[2] { 0, 0 };
-        //    int[] vecesRepetido = new int[2];
-        //    //int MenorVecesRepetido = 0;
-        //    //int numRepetidos = 0;
-        //    for (int i = 1; i <= 6; i++)
-        //    {
-        //        vecesRepetido = ContarMismoDado(i, tirada);
-        //        if (bandera == 0 || vecesRepetido[0] > MayorVecesRepetido[0])
-        //        {
-        //            MayorVecesRepetido = vecesRepetido;
-        //            bandera = 1;
-        //        }
-        //    }
-        //    return MayorVecesRepetido;
-        //}
     }
 }
-
-                //if (bandera == 0 || vecesRepetido > MayorVecesRepetido || vecesRepetido < MenorVecesRepetido)
-                //{
-                //    if (vecesRepetido > MayorVecesRepetido)
-                //    {
-                //        MayorVecesRepetido = vecesRepetido;
-                //        numRepetidos[0] = MayorVecesRepetido;   
-                //    }
-                //    else if(vecesRepetido < MenorVecesRepetido)
-                //    {
-                //        MenorVecesRepetido = vecesRepetido;
-                //        numRepetidos[0] = MenorVecesRepetido;
-                //    }
-                //    bandera = 1;
-                //}

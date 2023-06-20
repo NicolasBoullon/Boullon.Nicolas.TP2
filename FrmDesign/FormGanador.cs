@@ -11,7 +11,8 @@ using System.Windows.Forms;
 
 namespace FrmDesign
 {
-    public partial class FormGanador : Form 
+    public delegate void DelegadoMostrarGanadorYPerdedor(string ganador, string perdedor, int puntosGanador, int puntosPerdedor, bool empate);
+    public partial class FormGanador : Form
     {
         public delegate void MostrarGanador(string ganador, string perdedor, int puntosGanador, int puntosPerdedor, bool empate);
         List<Jugador> listJugador;
@@ -21,22 +22,24 @@ namespace FrmDesign
         private int pGan;
         private int pPerd;
         private bool emp;
+        public event DelegadoMostrarGanadorYPerdedor mostrarFinal;
         public FormGanador(string ganador, string perdedor, int puntosGanador, int puntosPerdedor, bool empate)
         {
             InitializeComponent();
-             gan = ganador;
-             per = perdedor;
-             pGan= puntosGanador;
-             pPerd = puntosPerdedor;
-             emp = empate;
-
+            gan = ganador;
+            per = perdedor;
+            pGan = puntosGanador;
+            pPerd = puntosPerdedor;
+            emp = empate;
+            mostrarFinal += mostrarResultados;
             listJugador = JugadorDAO.GetJugadores();
         }
 
         private void FormGanador_Load(object sender, EventArgs e)
         {
-            MostrarGanador informarResultados = mostrarResultados;
-            informarResultados(gan, per, pGan, pPerd, emp);
+            //MostrarGanador informarResultados = mostrarResultados;
+            //informarResultados(gan, per, pGan, pPerd, emp);
+            mostrarFinal(gan, per, pGan, pPerd, emp);
             SerializadorJson<List<Partida>> serial = new SerializadorJson<List<Partida>>();
             Partida partida = new Partida(gan, per, pGan, pPerd, DateTime.Now);
             if (!File.Exists("partidas.json"))
@@ -52,6 +55,7 @@ namespace FrmDesign
 
             }
         }
+
 
         private void mostrarResultados(string ganador, string perdedor, int puntosGanador, int puntosPerdedor, bool empate)
         {

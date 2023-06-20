@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCrearJugador));
             gpbCrearJugador = new GroupBox();
             lblNombreJugador = new Label();
             txtCrearJugador = new TextBox();
@@ -106,8 +107,9 @@
             Controls.Add(btnAceptarCrearJugador);
             Controls.Add(btnSalir);
             Controls.Add(gpbCrearJugador);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FormCrearJugador";
-            Text = "FormCrearJugador";
+            Text = "Crear Jugador";
             gpbCrearJugador.ResumeLayout(false);
             gpbCrearJugador.PerformLayout();
             ResumeLayout(false);

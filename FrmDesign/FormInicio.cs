@@ -37,20 +37,24 @@ namespace FrmDesign
         {
             tbcInferfazInicio.SelectTab(1);
             SerializadorJson<List<Partida>> serial = new SerializadorJson<List<Partida>>();
-            listPartida = serial.DeserializarJson<List<Partida>>("partidas.json");
             dtgvRankingVictorias.DataSource = null;
             dtgvRankingVictorias.DataSource = JugadorDAO.TraerRankingDeVictorias();
-            dtgvHistorialPartidas.Rows.Clear();
-            foreach (Partida item in listPartida)
+            if (File.Exists("partidas.json"))
             {
-                int rowIndex = dtgvHistorialPartidas.Rows.Add();
-                DataGridViewRow row = dtgvHistorialPartidas.Rows[rowIndex];
-                row.Cells[0].Value = item.JugadorGanador;
-                row.Cells[1].Value = item.JugadorPerdedor;
-                row.Cells[2].Value = item.CantidadPuntosJugadorUno;
-                row.Cells[3].Value = item.CantidadPuntosJugadorDos;
-                row.Cells[4].Value = item.JugadorGanador;
-                row.Cells[5].Value = item.HoraJugada;
+
+                listPartida = serial.DeserializarJson<List<Partida>>("partidas.json");
+                dtgvHistorialPartidas.Rows.Clear();
+                foreach (Partida item in listPartida)
+                {
+                    int rowIndex = dtgvHistorialPartidas.Rows.Add();
+                    DataGridViewRow row = dtgvHistorialPartidas.Rows[rowIndex];
+                    row.Cells[0].Value = item.JugadorGanador;
+                    row.Cells[1].Value = item.JugadorPerdedor;
+                    row.Cells[2].Value = item.CantidadPuntosJugadorUno;
+                    row.Cells[3].Value = item.CantidadPuntosJugadorDos;
+                    row.Cells[4].Value = item.JugadorGanador;
+                    row.Cells[5].Value = item.HoraJugada;
+                }
             }
         }
 

@@ -97,7 +97,7 @@
             MaximumSize = new Size(1082, 315);
             MinimumSize = new Size(1082, 315);
             Name = "FormGanador";
-            Text = "FormGanadora";
+            Text = "Resultados";
             Load += FormGanador_Load;
             ((System.ComponentModel.ISupportInitialize)pcbGanador).EndInit();
             ((System.ComponentModel.ISupportInitialize)pcbPerdedor).EndInit();
