@@ -34,7 +34,7 @@ en los cuales no se interrumpiran en ningun momento entre ellos.
 ![image](https://github.com/NicolasBoullon/Boullon.Nicolas.TP2/assets/95184975/3b3478df-1fbb-4c14-996b-cd7da726ea28)
 
 Al tocar el boton Crear Jugador, se abrira el siguiente formualario para poder crear un nuevo jugador.
-![Uploading image.png…]()
+![image](https://github.com/NicolasBoullon/Boullon.Nicolas.TP2/assets/95184975/20dc124b-47b6-4c3d-bd97-ef0015da98eb)
 
 
 Una vez empezado el juego, se lanzaran las tiradas de cada jugador, 10 en total, luego de esto se hara la sumatoria de puntos y se abrira un nuevo formulario anunciando el ganador. En caso de que haya sido un empate, no habra ganador ni suma 
