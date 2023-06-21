@@ -56,6 +56,7 @@
             JugadorGanador = new DataGridViewTextBoxColumn();
             FechaPartida = new DataGridViewTextBoxColumn();
             pictureBox1 = new PictureBox();
+            lblAclaracion = new Label();
             pnlBotones.SuspendLayout();
             pnlContenedorDelTabControl.SuspendLayout();
             tbcInferfazInicio.SuspendLayout();
@@ -260,6 +261,7 @@
             // tbpHistorialRanking
             // 
             tbpHistorialRanking.BackColor = Color.FromArgb(24, 51, 53);
+            tbpHistorialRanking.Controls.Add(lblAclaracion);
             tbpHistorialRanking.Controls.Add(lblHistorialDePartidas);
             tbpHistorialRanking.Controls.Add(lblRankingDeVictorias);
             tbpHistorialRanking.Controls.Add(dtgvRankingVictorias);
@@ -277,7 +279,7 @@
             lblHistorialDePartidas.AutoSize = true;
             lblHistorialDePartidas.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblHistorialDePartidas.ForeColor = Color.Snow;
-            lblHistorialDePartidas.Location = new Point(432, 47);
+            lblHistorialDePartidas.Location = new Point(451, 47);
             lblHistorialDePartidas.Name = "lblHistorialDePartidas";
             lblHistorialDePartidas.Size = new Size(234, 36);
             lblHistorialDePartidas.TabIndex = 4;
@@ -288,7 +290,7 @@
             lblRankingDeVictorias.AutoSize = true;
             lblRankingDeVictorias.Font = new Font("Segoe Print", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
             lblRankingDeVictorias.ForeColor = Color.Snow;
-            lblRankingDeVictorias.Location = new Point(4, 50);
+            lblRankingDeVictorias.Location = new Point(12, 49);
             lblRankingDeVictorias.Name = "lblRankingDeVictorias";
             lblRankingDeVictorias.Size = new Size(233, 36);
             lblRankingDeVictorias.TabIndex = 3;
@@ -391,6 +393,17 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
+            // lblAclaracion
+            // 
+            lblAclaracion.AutoSize = true;
+            lblAclaracion.Font = new Font("Segoe Print", 7.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblAclaracion.ForeColor = Color.Snow;
+            lblAclaracion.Location = new Point(691, 61);
+            lblAclaracion.Name = "lblAclaracion";
+            lblAclaracion.Size = new Size(376, 19);
+            lblAclaracion.TabIndex = 5;
+            lblAclaracion.Text = "Para actualizar el historial de partidas, clickear el boton \"Historial\"";
+            // 
             // FormInicio
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -448,5 +461,6 @@
         private DataGridViewTextBoxColumn Punto;
         private DataGridViewTextBoxColumn JugadorGanador;
         private DataGridViewTextBoxColumn FechaPartida;
+        private Label lblAclaracion;
     }
 }

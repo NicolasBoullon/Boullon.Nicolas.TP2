@@ -470,9 +470,9 @@ namespace FrmDesign
 
         private void btnCancelarMesa_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Mesa Cancelada");
             banderaMesa = true;
             cancellationSource.Cancel();
+            MessageBox.Show("Mesa Cancelada");
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
