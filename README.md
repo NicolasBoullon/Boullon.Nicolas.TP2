@@ -25,6 +25,7 @@ Como observamos apenas iniciamos la aplicacion podremos ingresar con el Usuario 
 
 En la parte de abajo seguido del Ingresar Usuario, encontraremos el Crear Usuario. Donde podremos crear un nuevo Usuario ingresando los datos correspondientes. Y validando de no crear un Usuario nuevo, con el mismo nombre de Usuario. Creando de forma
 automatica nuestro nuevo usuario ya actualizado en nuestra base de datos de SQL.
+
 ![image](https://github.com/NicolasBoullon/Boullon.Nicolas.TP2/assets/95184975/c5442336-3f63-47d5-b2cb-77f9389afcc4)
 
 
